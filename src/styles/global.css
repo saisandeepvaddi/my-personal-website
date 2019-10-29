@@ -1,0 +1,136 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  letter-spacing: 0.05em;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.theme-dark {
+  background: #537895; /* fallback for old browsers */
+  background-image: -webkit-linear-gradient(to top, #09203f 0%, #537895 100%);
+  background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+}
+
+.post-list-item-title {
+  box-shadow: none;
+  color: #34475a;
+  text-decoration: underline;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.all-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar {
+  height: 7em;
+  width: 7em;
+  border-radius: 3.5em;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  padding: 1em;
+}
+
+.home-container {
+  height: 100vh;
+}
+
+.main-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-container {
+  height: calc(100% - 200px);
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.links {
+  padding: 1em;
+  width: 350px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.links a,
+.nav-links a {
+  position: relative;
+  color: #34475a;
+  text-decoration: none;
+  box-shadow: none;
+}
+
+.links a::after,
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #34475a;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.1s ease-in-out 0s;
+  transition: all 0.1s ease-in-out 0s;
+}
+
+.links a:hover::after,
+.nav-links a:hover::after {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.hr {
+  height: 1px;
+  width: 100%;
+  background: #34475a;
+}
+
+.p-1 {
+  padding: 10px;
+}
+
+.bold {
+  font-weight: 800;
+}
+
+.my-gray {
+  color: #34475a;
+}
