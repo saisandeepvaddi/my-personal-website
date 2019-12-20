@@ -60,8 +60,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Sai Sandeep Vaddi`,
+        short_name: `svaddi`,
         start_url: `/`,
         background_color: `#34475a`,
         theme_color: `#407cca`,
