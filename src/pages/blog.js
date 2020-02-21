@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { rhythm } from "../utils/typography";
+import DarkModeToggle from "../components/dark-mode-toggle";
 
 class BlogIndex extends React.Component {
   render() {

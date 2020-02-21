@@ -134,3 +134,18 @@ html {
 .my-gray {
   color: #34475a;
 }
+
+body.light-mode {
+  background-color: #fff;
+  color: #000;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode {
+  background-color: #000;
+  color: #fff;
+}
+
+a.theme-switch[role="button"] {
+  cursor: pointer;
+}

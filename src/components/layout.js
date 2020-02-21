@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 
 import { rhythm, scale } from "../utils/typography";
+import DarkModeToggle from "./dark-mode-toggle";
 
 class Layout extends React.Component {
   render() {
@@ -61,6 +62,9 @@ class Layout extends React.Component {
         }}
       >
         <header>{header}</header>
+        <div>
+          <DarkModeToggle />
+        </div>
         <main>{children}</main>
         <footer>© {new Date().getFullYear()}, Sai Sandeep Vaddi</footer>
       </div>
