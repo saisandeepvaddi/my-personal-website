@@ -12,12 +12,6 @@ html {
   box-sizing: border-box;
 }
 
-.theme-dark {
-  background: #537895; /* fallback for old browsers */
-  background-image: -webkit-linear-gradient(to top, #09203f 0%, #537895 100%);
-  background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
-}
-
 .post-list-item-title {
   box-shadow: none;
   color: #34475a;
@@ -142,10 +136,26 @@ body.light-mode {
 }
 
 body.dark-mode {
-  background-color: #000;
-  color: #fff;
+  background-color: #202325;
+  color: #d1d1d1 !important;
+  a,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  li,
+  header,
+  button.theme-switch {
+    color: #d1d1d1 !important;
+  }
 }
 
-a.theme-switch[role="button"] {
+button.theme-switch {
   cursor: pointer;
+  border: none;
+  background: transparent;
+  outline: none;
 }

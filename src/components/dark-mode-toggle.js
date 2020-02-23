@@ -7,25 +7,13 @@ function DarkModeToggle() {
   return (
     <React.Fragment>
       {darkMode.value ? (
-        <a
-          className="theme-switch"
-          role="button"
-          type="button"
-          onClick={darkMode.disable}
-          style={{ marginLeft: "auto" }}
-        >
+        <button className="theme-switch" onClick={darkMode.disable}>
           ☀ Light
-        </a>
+        </button>
       ) : (
-        <a
-          className="theme-switch"
-          role="button"
-          type="button"
-          onClick={darkMode.enable}
-          style={{ marginLeft: "auto" }}
-        >
+        <button className="theme-switch" onClick={darkMode.enable}>
           ☾ Dark
-        </a>
+        </button>
       )}
     </React.Fragment>
   );

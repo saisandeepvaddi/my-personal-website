@@ -37,6 +37,7 @@ class Layout extends React.Component {
           style={{
             fontFamily: `Montserrat, sans-serif`,
             marginTop: 0,
+            marginBottom: 0,
           }}
         >
           <Link
@@ -61,8 +62,8 @@ class Layout extends React.Component {
           padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
         }}
       >
-        <header>{header}</header>
-        <div>
+        <div className="d-flex justify-between">
+          <header>{header}</header>
           <DarkModeToggle />
         </div>
         <main>{children}</main>
