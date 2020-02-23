@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 
 import { rhythm, scale } from "../utils/typography";
+import DarkModeToggle from "./dark-mode-toggle";
 
 class Layout extends React.Component {
   render() {
@@ -36,6 +37,7 @@ class Layout extends React.Component {
           style={{
             fontFamily: `Montserrat, sans-serif`,
             marginTop: 0,
+            marginBottom: 0,
           }}
         >
           <Link
@@ -60,7 +62,10 @@ class Layout extends React.Component {
           padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
         }}
       >
-        <header>{header}</header>
+        <div className="d-flex justify-between">
+          <header>{header}</header>
+          <DarkModeToggle />
+        </div>
         <main>{children}</main>
         <footer>© {new Date().getFullYear()}, Sai Sandeep Vaddi</footer>
       </div>
