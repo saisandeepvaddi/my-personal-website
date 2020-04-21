@@ -5,12 +5,13 @@ import DarkModeToggle from "./dark-mode-toggle";
 
 function Nav() {
   return (
-    <div className="navbar">
-      <div className="text-right nav-links" style={{ paddingRight: rhythm(2) }}>
+    <div className="navbar d-flex justify-end">
+      <div className="nav-links" style={{ paddingRight: rhythm(2) }}>
         <Link to="/blog" style={{ color: "#34475a" }}>
           Blog
         </Link>
-        <span style={{ padding: "20px" }}></span>
+      </div>
+      <div style={{ marginRight: 20 }}>
         <DarkModeToggle />
       </div>
     </div>

@@ -317,7 +317,8 @@ window.addEventListener("DOMContentLoaded", () => {
   const closeButton = document.getElementById("close-btn");
 
   menuButton.addEventListener("click", e => {
-    // Opens menu at (x,y) coordinates of mouse click on the hamburger icon.
+    // Opens menu at (x,y) coordinates of mouse click -
+    // - on the hamburger icon.
     window.openMenu(e.x, e.y);
   });
 

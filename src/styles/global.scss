@@ -26,6 +26,14 @@ html {
   justify-content: center;
 }
 
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
 .align-center {
   align-items: center;
 }
@@ -158,4 +166,11 @@ button.theme-switch {
   border: none;
   background: transparent;
   outline: none;
+  &.light {
+    color: yellow;
+  }
+
+  &.dark {
+    color: #202325;
+  }
 }

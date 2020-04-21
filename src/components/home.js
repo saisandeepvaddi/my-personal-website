@@ -6,6 +6,7 @@ import { DiGithubBadge } from "react-icons/di";
 import { FiLinkedin, FiTwitter } from "react-icons/fi";
 import { AiOutlineMail } from "react-icons/ai";
 import Nav from "./nav";
+import DarkModeToggle from "./dark-mode-toggle";
 
 function Home() {
   const data = useStaticQuery(graphql`
@@ -54,7 +55,11 @@ function Home() {
             />
           </div>
 
-          <header style={{ ...scale(1), color: "#34475a" }}>{author}</header>
+          <header
+            style={{ ...scale(1), color: "#34475a", textAlign: "center" }}
+          >
+            {author}
+          </header>
           <div className="hr"></div>
 
           <div

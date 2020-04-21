@@ -33,41 +33,48 @@ class Layout extends React.Component {
       );
     } else {
       header = (
-        <h3
+        // <h3
+        //   style={{
+        //     fontFamily: `Montserrat, sans-serif`,
+        //     marginTop: 0,
+        //     marginBottom: 0,
+        //   }}
+        // >
+        <Link
           style={{
-            fontFamily: `Montserrat, sans-serif`,
-            marginTop: 0,
-            marginBottom: 0,
+            boxShadow: `none`,
+            textDecoration: `none`,
+            color: `#34475a`,
           }}
+          to={`/`}
         >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `#34475a`,
-            }}
-            to={`/`}
-          >
-            {title}
-          </Link>
-        </h3>
+          Home
+        </Link>
+        // </h3>
       );
     }
     return (
-      <div
-        style={{
-          marginLeft: `auto`,
-          marginRight: `auto`,
-          maxWidth: rhythm(24),
-          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-        }}
-      >
-        <div className="d-flex justify-between">
-          <header>{header}</header>
-          <DarkModeToggle />
+      <div>
+        <div className="navbar d-flex justify-between">
+          <div className="nav-links">
+            <header>{header}</header>
+          </div>
+          <div style={{ marginRight: 20 }}>
+            <DarkModeToggle />
+          </div>
         </div>
-        <main>{children}</main>
-        <footer>© {new Date().getFullYear()}, Sai Sandeep Vaddi</footer>
+
+        <div
+          style={{
+            marginLeft: `auto`,
+            marginRight: `auto`,
+            maxWidth: rhythm(28),
+            padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+          }}
+        >
+          <main>{children}</main>
+          <footer>© {new Date().getFullYear()}, Sai Sandeep Vaddi</footer>
+        </div>
       </div>
     );
   }
