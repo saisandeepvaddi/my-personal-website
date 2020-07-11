@@ -41,6 +41,8 @@
     "use-dark-mode": "^2.3.1"
   },
   "devDependencies": {
+    "@saisandeepvaddi/eslint-config": "^1.0.3",
+    "eslint": "^7.4.0",
     "prettier": "^1.18.2"
   },
   "homepage": "https://github.com/saisandeepvaddi/saisandeepvaddi.com#readme",
@@ -58,7 +60,8 @@
     "clean": "gatsby clean",
     "build": "yarn clean && gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "lint": "eslint --ext .jsx,.js src/",
+    "lint:fix": "eslint --fix --ext .jsx,.js src/",
     "start": "yarn develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"

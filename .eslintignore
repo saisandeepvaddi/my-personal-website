@@ -1,0 +1,9 @@
+# Generated files
+node_modules/
+coverage/
+public/
+
+
+# IDE, VCS
+.git/
+.idea/
