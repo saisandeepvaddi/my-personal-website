@@ -1,5 +1,5 @@
 @import "utilities";
-$primary-color-dark: #202325;
+$primary-color-dark: #242423;
 $primary-color-light: #ffffff;
 $text-color-dark: #ffffff;
 $text-color-light: #34475a;
@@ -104,7 +104,7 @@ body.light-mode {
 }
 
 body.dark-mode {
-  background-color: $primary-color-dark;
+  background-color: #242423;
   color: #fff !important;
   a,
   h1,
@@ -121,6 +121,8 @@ body.dark-mode {
   }
   nav.blog-nav-bar {
     background-color: $primary-color-dark;
+    box-shadow: none;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.103);
   }
 }
 
