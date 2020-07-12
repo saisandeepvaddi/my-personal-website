@@ -2,10 +2,9 @@ import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import Image from "gatsby-image";
 import { scale } from "../utils/typography";
-import { DiGithubBadge } from "react-icons/di";
-import { FiLinkedin, FiTwitter } from "react-icons/fi";
-import { AiOutlineMail } from "react-icons/ai";
+
 import Nav from "./nav";
+import ContactLinks from "./ContactLinks";
 
 function Home() {
   const data = useStaticQuery(graphql`
@@ -20,19 +19,12 @@ function Home() {
       site {
         siteMetadata {
           author
-          social {
-            github
-            linkedin
-            twitter
-            email
-          }
         }
       }
     }
   `);
 
   const author = data.site.siteMetadata.author;
-  const { github, linkedin, twitter, email } = data.site.siteMetadata.social;
 
   return (
     <div className="home-container">
@@ -59,47 +51,24 @@ function Home() {
               ...scale(1),
               color: "#34475a",
               textAlign: "center",
-              marginBottom: "0.35em",
+              marginBottom: "0.1em",
             }}
           >
             {author}
           </header>
-          <div className="hr"></div>
-          <div
-            className="links"
+          <p
+            className="all-center description"
             style={{
+              fontSize: "1em",
               color: "#34475a",
+              textAlign: "center",
+              marginBottom: "0.5em",
             }}
           >
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href={`https://github.com/${github}`}
-            >
-              <DiGithubBadge size={25} />
-            </a>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href={`https://twitter.com/${twitter}`}
-            >
-              <FiTwitter size={25} />
-            </a>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href={`https://linkedin.com/in/${linkedin}`}
-            >
-              <FiLinkedin size={25} />
-            </a>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href={`mailto:${email}`}
-            >
-              <AiOutlineMail size={25} />
-            </a>
-          </div>
+            Software Developer
+          </p>
+          <div className="hr"></div>
+          <ContactLinks />
         </div>
       </div>
     </div>
