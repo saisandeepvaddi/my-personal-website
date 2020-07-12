@@ -61,18 +61,15 @@ When you first run `npm start` you will see a window with a default menu bar att
     height: 600,
     webPreferences: {
       preload: path.join(__dirname, "preload.js")
-      // (NOT RECOMMENDED)
-      // If true, we can skip attaching functions from ./menu-functions.js to window object in preload.js.
-      // And, instead, we can use electron APIs directly in renderer.js
-      // From Electron v5, nodeIntegration is set to false by default. And it is recommended to use preload.js to get access to only required Node.js apis.
-      // nodeIntegration: true
     },
-    frame: false //Remove frame to hide default menu
+    frame: false // Remove frame to hide default menu
   });
   // ...other stuff
 }
 
-// Register an event listener. When ipcRenderer sends mouse click co-ordinates, show menu at that position.
+// Register an event listener.
+// ipcRenderer sends mouse click coordinates.
+// Shows menu pop-up at those coordinates.
 ipcMain.on(`display-app-menu`, function(e, args) {
   if (isWindows && mainWindow) {
     menu.popup({
@@ -213,19 +210,30 @@ I used fontawesome js file from [fontawesome.com](https://fontawesome.com/) for 
 
    <title>My Awesome App</title>
    <link rel="stylesheet" href="style.css" />
-   <script src="https://kit.fontawesome.com/1c9144b004.js" crossorigin="anonymous"></script>
+   <script
+      src="https://kit.fontawesome.com/1c9144b004.js"
+      crossorigin="anonymous">
+   </script>
    </head>
  </head>
  <body>
    <div id="menu-bar">
      <div class="left" role="menu">
-       <button class="menubar-btn" id="menu-btn"><i class="fas fa-bars"></i></button>
+       <button class="menubar-btn" id="menu-btn">
+         <i class="fas fa-bars"></i>
+       </button>
        <h5>My Awesome App</h5>
      </div>
      <div class="right">
-       <button class="menubar-btn" id="minimize-btn"><i class="fas fa-window-minimize"></i></button>
-       <button class="menubar-btn" id="max-unmax-btn"><i class="far fa-square"></i></button>
-       <button class="menubar-btn" id="close-btn"><i class="fas fa-times"></i></button>
+       <button class="menubar-btn" id="minimize-btn">
+         <i class="fas fa-window-minimize"></i>
+       </button>
+       <button class="menubar-btn" id="max-unmax-btn">
+         <i class="far fa-square"></i>
+       </button>
+       <button class="menubar-btn" id="close-btn">
+         <i class="fas fa-times"></i>
+       </button>
      </div>
    </div>
    <div class="container">
@@ -316,17 +324,17 @@ window.addEventListener("DOMContentLoaded", () => {
   const maxUnmaxButton = document.getElementById("max-unmax-btn");
   const closeButton = document.getElementById("close-btn");
 
-  menuButton.addEventListener("click", e => {
+  menuButton.addEventListener("click", (e) => {
     // Opens menu at (x,y) coordinates of mouse click -
     // - on the hamburger icon.
     window.openMenu(e.x, e.y);
   });
 
-  minimizeButton.addEventListener("click", e => {
+  minimizeButton.addEventListener("click", (e) => {
     window.minimizeWindow();
   });
 
-  maxUnmaxButton.addEventListener("click", e => {
+  maxUnmaxButton.addEventListener("click", (e) => {
     const icon = maxUnmaxButton.querySelector("i.far");
 
     window.maxUnmaxWindow();
@@ -341,7 +349,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  closeButton.addEventListener("click", e => {
+  closeButton.addEventListener("click", (e) => {
     window.closeWindow();
   });
 });
