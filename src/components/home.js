@@ -55,12 +55,16 @@ function Home() {
           </div>
 
           <header
-            style={{ ...scale(1), color: "#34475a", textAlign: "center" }}
+            style={{
+              ...scale(1),
+              color: "#34475a",
+              textAlign: "center",
+              marginBottom: "0.35em",
+            }}
           >
             {author}
           </header>
           <div className="hr"></div>
-
           <div
             className="links"
             style={{
