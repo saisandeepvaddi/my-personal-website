@@ -1,3 +1,4 @@
+@import "utilities";
 $primary-color-dark: #202325;
 $primary-color-light: #ffffff;
 $text-color-dark: #ffffff;
@@ -20,42 +21,6 @@ html {
   box-shadow: none;
   color: $text-color-light;
   text-decoration: underline;
-}
-
-.d-flex {
-  display: flex;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.justify-between {
-  justify-content: space-between;
-}
-
-.justify-end {
-  justify-content: flex-end;
-}
-
-.align-center {
-  align-items: center;
-}
-
-.all-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.avatar {
-  height: 7em;
-  width: 7em;
-  border-radius: 3.5em;
-}
-
-.text-right {
-  text-align: right;
 }
 
 .navbar {
@@ -125,20 +90,6 @@ html {
   transform: scaleX(1);
 }
 
-.hr {
-  height: 1px;
-  width: 100%;
-  background: #34475a;
-}
-
-.p-1 {
-  padding: 10px;
-}
-
-.bold {
-  font-weight: 700;
-}
-
 .my-gray {
   color: $text-color-light;
 }
@@ -154,7 +105,7 @@ body.light-mode {
 
 body.dark-mode {
   background-color: $primary-color-dark;
-  color: #d1d1d1 !important;
+  color: #fff !important;
   a,
   h1,
   h2,
@@ -166,7 +117,7 @@ body.dark-mode {
   li,
   header,
   button.theme-switch {
-    color: #d1d1d1 !important;
+    color: #fff !important;
   }
   nav.blog-nav-bar {
     background-color: $primary-color-dark;
@@ -197,8 +148,28 @@ button.theme-switch {
   }
 }
 
-@media screen and (max-width: 767px) {
-  .theme-btn-label {
-    display: none;
+.blog-layout {
+  a:not(.anchor):not(.home-btn):not(.boring-link) {
+    outline: none;
+    text-decoration: none;
+    padding: 2px;
+    border-radius: 4px;
+    color: #2a9d8f !important;
+    background-color: #2a9d902f !important;
+    &:link {
+      font-weight: 600;
+    }
+    &:visited {
+      font-weight: 600;
+    }
+    &:focus {
+      border-bottom: 2px solid #2a9d8f;
+    }
+    &:hover {
+      border-bottom: 2px solid #2a9d8f;
+    }
+    &:active {
+      border-bottom: 3px solid #2a9d8f;
+    }
   }
 }

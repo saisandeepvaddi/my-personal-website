@@ -20,6 +20,7 @@ class Layout extends React.Component {
           }}
         >
           <Link
+            className="boring-link"
             style={{
               boxShadow: `none`,
               textDecoration: `none`,
@@ -41,6 +42,7 @@ class Layout extends React.Component {
         //   }}
         // >
         <Link
+          className="boring-link"
           style={{
             boxShadow: `none`,
             textDecoration: `none`,
@@ -54,12 +56,19 @@ class Layout extends React.Component {
       );
     }
     return (
-      <div>
+      <div className="blog-layout">
         <nav className="navbar d-flex justify-between blog-nav-bar">
           <div className="nav-links">
             <header>{header}</header>
           </div>
-          <div style={{ marginRight: 0 }}>
+          <div style={{ marginRight: 20 }} className="d-flex align-center">
+            <Link
+              to="/blog"
+              style={{ color: "#34475a", marginRight: 20 }}
+              className="boring-link"
+            >
+              Blog
+            </Link>
             <DarkModeToggle />
           </div>
         </nav>

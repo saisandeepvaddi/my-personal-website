@@ -55,9 +55,9 @@ const Bio = () => {
         }}
       />
       <div>
-        Written by <strong>{author}</strong>.{` `}
+        Written by{" "}
         <a href={`https://github.com/${social.github}`}>
-          You should follow him on GitHub.
+          <strong>{author}</strong>
         </a>
       </div>
     </div>

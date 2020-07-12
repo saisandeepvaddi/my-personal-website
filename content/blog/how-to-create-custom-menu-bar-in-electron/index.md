@@ -4,9 +4,7 @@ date: "2020-02-02"
 description: "Tutorial about how to create custom menu bar in Electron apps."
 ---
 
-Do you want to replace your electron app's menu bar to look something cool?
-Let's see how to build a custom menu bar by building a similar one to slack's
-menu bar.
+This tutorial gives details about how to build a hamburger type menu bar in electron apps similar to slack's menu bar. This type of menu bar declutters the title bar when your application's menu items are rarely used.
 
 ## Pre-requisite
 
