@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Sai Sandeep Vaddi`,
     author: `Sai Sandeep Vaddi`,
-    description: `My personal Website`,
+    description: `Software Engineer and Open-Source developer. This is my personal website and blog.`,
     siteUrl: `https://saisandeepvaddi.com`,
     social: {
       github: `saisandeepvaddi`,

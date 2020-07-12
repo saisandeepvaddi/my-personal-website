@@ -73,7 +73,6 @@ class Layout extends React.Component {
           }}
         >
           <main>{children}</main>
-          <footer>© {new Date().getFullYear()}, Sai Sandeep Vaddi</footer>
         </div>
       </div>
     );
