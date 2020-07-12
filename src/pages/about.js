@@ -77,7 +77,6 @@ class About extends React.Component {
               started writing a <Link to={"/blog"}>blog</Link> about the stuff I
               learn.
             </p>
-            <p>You can contact me using the links below.</p>
             <p className="all-center">
               <ContactLinks />
             </p>
