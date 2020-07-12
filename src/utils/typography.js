@@ -1,17 +1,20 @@
 import Typography from "typography";
-import Wordpress2016 from "typography-theme-wordpress-2016";
+// import Wordpress2016 from "typography-theme-wordpress-2016";
+import TypographyTheme from "typography-theme-github";
 
-Wordpress2016.overrideThemeStyles = () => {
-  return {
-    "a.gatsby-resp-image-link": {
-      boxShadow: `none`,
-    },
-  };
-};
+// TypographyTheme.overrideThemeStyles = () => {
+//   return {
+//     "a.gatsby-resp-image-link": {
+//       boxShadow: `none`,
+//     },
+//   };
+// };
 
-delete Wordpress2016.googleFonts;
+TypographyTheme.baseFontSize = "18px";
 
-const typography = new Typography(Wordpress2016);
+delete TypographyTheme.googleFonts;
+
+const typography = new Typography(TypographyTheme);
 
 // Hot reload typography in development.
 if (process.env.NODE_ENV !== `production`) {
