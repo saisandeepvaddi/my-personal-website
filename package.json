@@ -45,7 +45,7 @@
   "devDependencies": {
     "@saisandeepvaddi/eslint-config": "^1.0.3",
     "eslint": "^7.4.0",
-    "prettier": "^1.18.2"
+    "prettier": "^2.0.5"
   },
   "homepage": "https://github.com/saisandeepvaddi/saisandeepvaddi.com#readme",
   "keywords": [
@@ -62,8 +62,8 @@
     "clean": "gatsby clean",
     "build": "yarn clean && gatsby build",
     "develop": "gatsby develop",
-    "format:check": "prettier --trailing-comma es5 --print-width 80 --check \"**/*.md\"",
-    "format:fix": "prettier --trailing-comma es5 --print-width 80 --write \"**/*.md\"",
+    "format": "prettier --trailing-comma es5 --prose-wrap always --print-width 80 --check \"**/*.md\"",
+    "format:fix": "prettier --trailing-comma es5 --prose-wrap always --print-width 80 --write \"**/*.md\"",
     "lint": "eslint --ext .jsx,.js src/",
     "lint:fix": "eslint --fix --ext .jsx,.js src/",
     "start": "yarn develop",
