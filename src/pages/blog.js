@@ -40,6 +40,7 @@ class BlogIndex extends React.Component {
             </article>
           );
         })}
+        <footer>© {new Date().getFullYear()}, Sai Sandeep Vaddi</footer>
       </Layout>
     );
   }
