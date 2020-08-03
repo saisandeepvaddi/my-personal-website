@@ -8,7 +8,7 @@ class Index extends React.Component {
   render() {
     return (
       <>
-        <SEO title="Sai Sandeep Vaddi" />
+        <SEO title="Sai Sandeep Vaddi. Links to my profile." />
         <Home />
       </>
     );
