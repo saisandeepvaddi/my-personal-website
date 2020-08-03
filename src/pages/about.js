@@ -28,8 +28,7 @@ class About extends React.Component {
           </header>
           <section>
             <p>
-              Hey 👋! I&apos;m <i>Sai Sandeep Vaddi</i>. I know, that&apos;s a
-              long name to call. You can call me Sai.
+              Hey There👋! I&apos;m <i>Sai Sandeep Vaddi</i>.
             </p>
             <p>
               I&apos;m a Software Developer at{" "}
