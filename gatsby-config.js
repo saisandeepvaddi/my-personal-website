@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Sai Sandeep Vaddi`,
     author: `Sai Sandeep Vaddi`,
-    description: `Software Engineer and Open-Source developer. This is my personal website and blog.`,
+    description: `Software Engineer and Open-Source developer. Currently focusing on web technologies. This is my personal website and blog.`,
     siteUrl: `https://saisandeepvaddi.com`,
     social: {
       github: `saisandeepvaddi`,
@@ -73,6 +73,7 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-advanced-sitemap`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {

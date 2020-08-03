@@ -4,7 +4,9 @@ date: "2020-02-02"
 description: "Tutorial about how to create custom menu bar in Electron apps."
 ---
 
-This tutorial gives details about how to build a hamburger type menu bar in electron apps similar to slack's menu bar. This type of menu bar declutters the title bar when your application's menu items are rarely used.
+This tutorial gives details about how to build a hamburger type menu bar in
+electron apps similar to slack's menu bar. This type of menu bar declutters the
+title bar when your application's menu items are rarely used.
 
 ## Pre-requisite
 
