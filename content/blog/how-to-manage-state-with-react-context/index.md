@@ -1,8 +1,8 @@
 ---
 tags: [react]
 title: Simple way to manage state in React with Context
-created: "2020-07-29T20:16:23.512Z"
-modified: "2020-08-01T20:58:41.220Z"
+description: We will learn how to use React's context API to manage state. Also, we'll see how to use useSWR hook from swr library to manage async data from an API.
+date: "2020-08-02"
 ---
 
 ## What we'll learn
@@ -33,7 +33,7 @@ Head over to `swr`'s docs to learn more. The API is small and easy.
 ## Store
 
 We need a top-level component where will maintain this global state. Let's call
-this component `GlobalStateComponent`. If you've used `Redux` this can be your
+this component `GlobalStateComponent`. If you've used `Redux`, this can be your
 store.
 
 We'll test with 2 types of data for better a understanding.
@@ -161,7 +161,7 @@ export function GlobalStateProvider(props) {
   return <GlobalStateContext.Provider value={value} {...props} />;
 }
 
-// a hook to use whenever we need to consume data from `GlobalStateProvider`. 
+// a hook to use whenever we need to consume data from `GlobalStateProvider`.
 // So, We don't need React.useContext everywhere we need data from GlobalStateContext.
 
 export function useGlobalState() {
@@ -328,7 +328,5 @@ Thank you and have a great day. 😀 👋
 [vercel-link]: https://vercel.com/
 [recoil-link]: https://recoiljs.org/
 [redux-toolkit-link]: https://redux-toolkit.js.org/
-[react-context-global-state]:
-  https://codesandbox.io/s/react-context-global-state-2ih3u
-[react-context-global-state-memo]:
-  https://codesandbox.io/s/react-context-global-state-memo-qs2is
+[react-context-global-state]: https://codesandbox.io/s/react-context-global-state-2ih3u
+[react-context-global-state-memo]: https://codesandbox.io/s/react-context-global-state-memo-qs2is
