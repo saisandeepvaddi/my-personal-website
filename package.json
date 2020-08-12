@@ -32,6 +32,7 @@
     "gatsby-source-filesystem": "^2.1.33",
     "gatsby-transformer-remark": "^2.6.30",
     "gatsby-transformer-sharp": "^2.3.0",
+    "medium-zoom": "^1.0.6",
     "node-sass": "^4.13.1",
     "prismjs": "^1.17.1",
     "react": "^16.11.0",
