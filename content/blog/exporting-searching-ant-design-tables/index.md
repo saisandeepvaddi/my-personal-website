@@ -1,23 +1,36 @@
 ---
 title: Exporting, Searching Ant Design Tables with Ant Table Extensions
 date: "2020-08-12"
-description: "Introduction and usage of the ant-table-extensions library for advanced Ant Table usage."
+description:
+  "Introduction and usage of the ant-table-extensions library for advanced Ant
+  Table usage."
 ---
 
-If you've been using Ant Design in your projects, you know its Table component is extensive. You almost never need to reach out for third-party table libraries.
+If you've been using Ant Design in your projects, you know its Table component
+is extensive. You almost never need to reach out for third-party table
+libraries.
 
-To extend that even further, I've released [ant-table-extensions](https://github.com/saisandeepvaddi/ant-table-extensions). Right now, it has support for exporting to CSV, and searching the table including fuzzy search (configurable).
+To extend that even further, I've released
+[ant-table-extensions](https://github.com/saisandeepvaddi/ant-table-extensions).
+Right now, it has support for exporting to CSV, and searching the table
+including fuzzy search (configurable).
 
-I'll show a quick summary of features, please checkout [docs](https://ant-table-extensions.vercel.app/?path=/docs/get-started--page) and [demos](https://ant-table-extensions.vercel.app/?path=/docs/demos--default) for more details.
+I'll show a quick summary of features, please checkout
+[docs](https://ant-table-extensions.vercel.app/?path=/docs/get-started--page)
+and [demos](https://ant-table-extensions.vercel.app/?path=/docs/demos--default)
+for more details.
 
 The library adds four main props to Table.
 
-1. `exportable` - Adds Export to CSV button and exports all rows and columns on click.
+1. `exportable` - Adds Export to CSV button and exports all rows and columns on
+   click.
 2. `exportableProps` - Customize CSV exporting.
-3. `searchable` - Adds search box and search functionality. Searches for exact word by default.
+3. `searchable` - Adds search box and search functionality. Searches for exact
+   word by default.
 4. `searchableProps` - Customize search.
 
-> NOTE: You already should have ant design in your project and its styles are imported.
+> NOTE: You already should have ant design in your project and its styles are
+> imported.
 
 ## Installation
 
@@ -71,7 +84,8 @@ The result is,
 
 You can modify how the data and headers should be in exported file.
 
-There is a `fields` option part of `exportableProps`. Let's say you need to add `Full Name` in your CSV combining first name and last name.
+There is a `fields` option part of `exportableProps`. Let's say you need to add
+`Full Name` in your CSV combining first name and last name.
 
 ```jsx
 const fields = {
@@ -93,9 +107,13 @@ return (
 );
 ```
 
-Check the docs for more [configuration options](https://ant-table-extensions.vercel.app/?path=/docs/get-started--page#exportableprops).
+Check the docs for more
+[configuration options](https://ant-table-extensions.vercel.app/?path=/docs/get-started--page#exportableprops).
 
-There is an `ExportTableButton` component available if want to just grab the button that does all the exporting and put it wherever you want. Please check [ExportTableButton docs](https://ant-table-extensions.vercel.app/?path=/docs/demos--advanced-export-button) for details.
+There is an `ExportTableButton` component available if want to just grab the
+button that does all the exporting and put it wherever you want. Please check
+[ExportTableButton docs](https://ant-table-extensions.vercel.app/?path=/docs/demos--advanced-export-button)
+for details.
 
 ## Searchable Table
 
@@ -129,11 +147,18 @@ function App() {
 }
 ```
 
-Check the [searchableProps](https://ant-table-extensions.vercel.app/?path=/docs/get-started--page#searchableprops) to see available search customization.
+Check the
+[searchableProps](https://ant-table-extensions.vercel.app/?path=/docs/get-started--page#searchableprops)
+to see available search customization.
 
-There is a `SearchTableInput` component available if want to use the input box that does the searching and put it wherever you want. Please check [SearchTableInput docs](https://ant-table-extensions.vercel.app/?path=/docs/demos--advanced-search-input) for details. Click `show code` in the docs to see usage. There's a little more state management to do for this.
+There is a `SearchTableInput` component available if want to use the input box
+that does the searching and put it wherever you want. Please check
+[SearchTableInput docs](https://ant-table-extensions.vercel.app/?path=/docs/demos--advanced-search-input)
+for details. Click `show code` in the docs to see usage. There's a little more
+state management to do for this.
 
-As you might have guessed, you can use `exportable` and `searchable` to have both.
+As you might have guessed, you can use `exportable` and `searchable` to have
+both.
 
 ```jsx
 function App() {
@@ -149,8 +174,10 @@ The result is,
   <img alt="Exportable & Searchable Table" src="./exportable-searchable-simple.jpg" width="500" />
 </p>
 
-GitHub repository at [ant-table-extensions](https://github.com/saisandeepvaddi/ant-table-extensions)
+GitHub repository at
+[ant-table-extensions](https://github.com/saisandeepvaddi/ant-table-extensions)
 
-Link to my GitHub to check my other projects. - [saisandeepvaddi](https://github.com/saisandeepvaddi).
+Link to my GitHub to check my other projects. -
+[saisandeepvaddi](https://github.com/saisandeepvaddi).
 
 Thank you. Have a great day 🙂.

@@ -1,7 +1,9 @@
 ---
 tags: [react]
 title: Simple way to manage state in React with Context
-description: We will learn how to use React's context API to manage state. Also, we'll see how to use useSWR hook from swr library to manage async data from an API.
+description:
+  We will learn how to use React's context API to manage state. Also, we'll see
+  how to use useSWR hook from swr library to manage async data from an API.
 date: "2020-08-02"
 ---
 
@@ -328,5 +330,7 @@ Thank you and have a great day. 😀 👋
 [vercel-link]: https://vercel.com/
 [recoil-link]: https://recoiljs.org/
 [redux-toolkit-link]: https://redux-toolkit.js.org/
-[react-context-global-state]: https://codesandbox.io/s/react-context-global-state-2ih3u
-[react-context-global-state-memo]: https://codesandbox.io/s/react-context-global-state-memo-qs2is
+[react-context-global-state]:
+  https://codesandbox.io/s/react-context-global-state-2ih3u
+[react-context-global-state-memo]:
+  https://codesandbox.io/s/react-context-global-state-memo-qs2is
