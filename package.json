@@ -61,7 +61,7 @@
   "scripts": {
     "clean": "gatsby clean",
     "build": "yarn clean && gatsby build",
-    "develop": "gatsby develop",
+    "develop": "gatsby develop -p 7777",
     "format": "prettier --trailing-comma es5 --prose-wrap always --print-width 80 --check \"**/*.md\"",
     "format:fix": "prettier --trailing-comma es5 --prose-wrap always --print-width 80 --write \"**/*.md\"",
     "lint": "eslint --ext .jsx,.js src/",
