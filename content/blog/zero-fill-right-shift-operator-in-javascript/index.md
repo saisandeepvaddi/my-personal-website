@@ -85,7 +85,7 @@ So, what happened was,
 - Shift zero number of bits to the right. That means do not shift any bits.
 - Return the result as an unsigned 32-bit integer.
 
-This always results in an unsigned integer between 0 (all 0 bits) and 0xFFFFFFFF (all 1 bits) because after `>>>` operation, the 1s on the left no longer represent signedness of number.
+This always results in an unsigned integer between 0 (all 0 bits) and 0xFFFFFFFF (all 1 bits) because after `>>>` operation, the 1s on the left no longer represent the signedness of number.
 
 ## So is that all?
 
