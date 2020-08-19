@@ -79,7 +79,7 @@ Negative numbers are generally represented with 2's complement.
 
 So, what happened was,
 
-- -1 gets converted it to 2's complement.
+- -1 gets converted to 2's complement.
 - Shift zero number of bits to the right. That means do not shift any bits.
 - Return the result as an unsigned 32-bit integer.
 
