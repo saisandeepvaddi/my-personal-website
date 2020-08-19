@@ -70,8 +70,10 @@ Negative numbers are generally represented with 2's complement.
 ```js
 2's complement = reverse the bits and add 1
 
+-1 = 2's complement of 1
+
 1 in 32-bit binary // 00000000000000000000000000000001
-1's complement of 1 = flip all bits = // 11111111111111111111111111111110
+1's complement of 1 = flip all bits // 11111111111111111111111111111110
 2's complement of 1 = 1's complement + 1 // 11111111111111111111111111111110 + 1
 
 -1 // 11111111111111111111111111111111
