@@ -1,7 +1,7 @@
 ---
 tags: [javascript]
 title: ">>> operator in JavaScript"
-description: asdfasdf
+description: Some details about JavaScript's unsigned right shift operator '>>>' with other bit shift operator information sprinkled on top.
 date: "2020-08-19"
 ---
 
