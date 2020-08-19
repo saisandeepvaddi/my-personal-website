@@ -62,7 +62,7 @@ To understand that, let's use `toString(2)` to see the results in binary.
 (1 >> 0).toString(2); // 1
 (-1 >> 0).toString(2); // -1
 (1 >>> 0).toString(2); // 1
-(-1 >>> 0).toString(2); // 11111111111111111111111111111111
+(-1 >>> 0).toString(2); // 11111111111111111111111111111111  (4294967295 in decimal)
 ```
 
 Negative numbers are generally represented with 2's complement.
@@ -115,9 +115,9 @@ When `>>>` failed coercing "lemons" to a number, it resulted in 0 to ensure an i
 ```tsx
 let numbers = [1, 2, 3, 4, 5];
 
-numbersArray.splice(numbersArray.indexOf(6), 1);
+numbers.splice(numbers.indexOf(6), 1);
 
-// [1,2,3,4] --- Oops
+// numbers -> [1,2,3,4] --- Oops
 ```
 
 Whenever you use `splice` with `indexOf()` in JS, always check if index is > 0. Otherwise if element is not found, `.splice(-1, 1)` removes the last element.
@@ -125,10 +125,10 @@ Whenever you use `splice` with `indexOf()` in JS, always check if index is > 0. 
 The '_420 byte alternative to a popular library_' way to write this is,
 
 ```tsx
-numbersArray.splice(numbersArray.indexOf(element) >>> 0, 1);
+numbers.splice(numbers.indexOf(element) >>> 0, 1);
 ```
 
-If `indexOf(element)` is -1, We know `-1 >>> 0` will be `4294967295` so splice wouldn't remove anything wrong.
+If `indexOf(element)` is -1, We know `-1 >>> 0` will be `4294967295`. So splice wouldn't remove anything wrong.
 
 Seriously, don't write code like that. Unless you are trying to save the world with 50 fewer bytes of course!
 
