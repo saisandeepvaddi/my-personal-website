@@ -136,7 +136,7 @@ Seriously, don't write code like that. Unless you are trying to save the world w
 
 ## What does <<< do then?
 
-It doesn't exist. It'd be useless because there won't be any difference between `<<<` and `<<` even if it existed. Think about it.
+It doesn't exist.
 
 Use your new-found `>>>` powers carefully. The best way to use is to avoid it.
 
