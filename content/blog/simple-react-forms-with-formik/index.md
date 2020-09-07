@@ -19,7 +19,7 @@ I wanted to share how I use [Formik](https://formik.org) to write forms in my re
 
 ## useFormik hook
 
-Out of different ways you can use `Formik` to create forms, the `useFormik` hook is the only thing I've always needed. It takes a `config` object and returns an object with all the tools we need to create forms.
+Out of different ways you can use `Formik` to create forms, the `useFormik` hook is the only thing I've ever needed. It takes a `config` object and returns an object with all the tools we need to create forms.
 
 The minimum values you need to add in the `config` object are:
 
