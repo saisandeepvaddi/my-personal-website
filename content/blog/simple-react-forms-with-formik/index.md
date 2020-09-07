@@ -64,7 +64,7 @@ Even if you don't need both `create` and `edit`, writing a form container keeps 
 
 If we are using both forms, I also send an extra `isNew` prop to `<UserForm />` to know whether it's a `create` form or an `edit` form. This helps to display correct error messages and other text.
 
-![A diagram for form structure](https://res.cloudinary.com/saisandeepvaddi/image/upload/q_auto/e_bgremoval/v1599443657/blog/form-diagram.png)
+![A diagram for form structure](https://res.cloudinary.com/saisandeepvaddi/image/upload/q_auto/v1599452764/blog/formik-blog-post-diagram.png)
 
 ## User account form
 
