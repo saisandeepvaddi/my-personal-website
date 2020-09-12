@@ -1,0 +1,88 @@
+---
+tags: [react, javascript]
+title: Simple structure to write forms in React with Formik
+description: We'll see how we can write forms in React with Formik to create small, well-organized components and avoid form-management headaches.
+date: "2020-09-07"
+---
+
+### Table of Contents
+
+- [Introduction](#introduction)
+- [useFormik hook](#useformik-hook)
+- [Component Structure](#component-structure)
+- [User account form](#user-account-form)
+- [Final Thoughts](#final-thoughts)
+
+## Introduction
+
+I wanted to share how I use [Formik](https://formik.org) to write forms in my react code. I expect you've already heard and tried `Formik` before so we can discuss mostly component structure here. This article is not intended to be a full `Formik` tutorial. [Formik docs](https://formik.org/docs/overview) has all the information you need.
+
+## useFormik hook
+
+Out of different ways you can use `Formik` to create forms, the `useFormik` hook is the only thing I've ever needed. It takes a `config` object and returns an object with all the tools we need to create forms.
+
+The minimum values you need to add in the `config` object are:
+
+1. `initialValues` object - Values that go inside the form fields when the form is rendered. This is the initial state of the form.
+2. `onSubmit` function - Receives the final values when the user submits the form. Use this function to clean up the `values` if needed before sending it to the server.
+3. `validate` function - Run validations on values and return errors. There is an alternative `validationSchema` which you can use to define a schema using [Yup](https://github.com/jquense/yup) object schema validation library.
+
+```jsx
+const formik = useFormik({
+  initialValues,
+  onSubmit,
+  validate,
+});
+
+const {
+  values,
+  errors,
+  handleSubmit,
+  setFieldValue,
+  ...andManyOthers
+} = formik;
+```
+
+## Component Structure
+
+I always use the good old two-level `container & presentational` structure for forms.
+
+1. A container component where I define all the `config` that goes in `useFormik(config)` hook.
+2. A presentational component that receives this `config` prop and renders the form component.
+
+This structure is a general style to write reusable components. This works even better for forms by creating separate containers for `create` and `edit` items but uses the same `<Form />` component that displays the form.
+
+For example, a user account form structure looks like this.
+
+1. `<CreateUserFormContainer />`
+2. `<UpdateUserFormContainer />`
+3. `<UserForm />`
+
+`validate` function or `validationSchema` goes in another file and imported into form containers.
+
+Even if you don't need both `create` and `edit`, writing a form container keeps things clear in large forms.
+
+If we are using both forms, I also send an extra `isNew` prop to `<UserForm />` to know whether it's a `create` form or an `edit` form. This helps to display correct error messages and other text.
+
+![A diagram for form structure](https://res.cloudinary.com/saisandeepvaddi/image/upload/q_auto/v1599452764/blog/formik-blog-post-diagram.png)
+
+## User account form
+
+Here's the [CodeSandbox Link](https://codesandbox.io/s/demo-for-formik-tutorial-blogpost-7y7t1?autoresize=1&fontsize=14&hidenavigation=1&theme=dark) to see the code for a sample User account form along with some utils and validations.
+
+<iframe src="https://codesandbox.io/embed/demo-for-formik-tutorial-blogpost-7y7t1?autoresize=1&fontsize=14&hidenavigation=1&theme=dark"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="demo-for-formik-tutorial-blogpost"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+
+[CodeSandbox Link](https://codesandbox.io/s/demo-for-formik-tutorial-blogpost-7y7t1?autoresize=1&fontsize=14&hidenavigation=1&theme=dark)
+
+## Final Thoughts
+
+Although we've only needed the `useFormik` hook, if you want to create custom fields using Formik elements like `<Field>`, `<ErrorMessage>`, `useFormik` won't work. So, be sure to check [useFormik docs](https://formik.org/docs/api/useFormik) to see what are you missing by using the `useFormik` hook.
+
+If you find yourself writing too many conditionals in JSX to use the same `<Form />` for both `create` and `edit` or there are a lot of differences in form fields in `create` and `edit` forms, it's time to separate them in different components.
+
+You never need to store form data in a global state especially using state-management libraries like Redux or MobX.

@@ -1,0 +1,183 @@
+---
+title: Exporting, Searching Ant Design Tables with Ant Table Extensions
+date: "2020-08-12"
+description:
+  "Introduction and usage of the ant-table-extensions library for advanced Ant
+  Table usage."
+---
+
+If you've been using Ant Design in your projects, you know its Table component
+is extensive. You almost never need to reach out for third-party table
+libraries.
+
+To extend that even further, I've released
+[ant-table-extensions](https://github.com/saisandeepvaddi/ant-table-extensions).
+Right now, it has support for exporting to CSV, and searching the table
+including fuzzy search (configurable).
+
+I'll show a quick summary of features, please checkout
+[docs](https://ant-table-extensions.vercel.app/?path=/docs/get-started--page)
+and [demos](https://ant-table-extensions.vercel.app/?path=/docs/demos--default)
+for more details.
+
+The library adds four main props to Table.
+
+1. `exportable` - Adds Export to CSV button and exports all rows and columns on
+   click.
+2. `exportableProps` - Customize CSV exporting.
+3. `searchable` - Adds search box and search functionality. Searches for exact
+   word by default.
+4. `searchableProps` - Customize search.
+
+> NOTE: You already should have ant design in your project and its styles are
+> imported.
+
+## Installation
+
+```shell
+npm install ant-table-extensions
+```
+
+```diff
+// don't forget to import ant styles here.
+- import { Table } from "antd";
++ import { Table } from "ant-table-extensions";
+```
+
+## Exportable Table
+
+It's as simple as adding `exportable` prop.
+
+```jsx
+function App() {
+  return <Table dataSource={dataSource} columns={columns} exportable />;
+}
+```
+
+Now you'll have a button which exports the table to a CSV.
+
+<p align="center">
+  <img alt="Table with Export button" src="https://res.cloudinary.com/saisandeepvaddi/image/upload/q_auto/v1599929998/blog/exporting-searching-ant-design-tables/exportable-table-simple.jpg" width="500" />
+</p>
+
+You can also configure how you can export your table,
+
+If you want to pick columns to export,
+
+```jsx
+function App() {
+  return (
+    <Table
+      dataSource={dataSource}
+      columns={columns}
+      exportableProps={{ showColumnPicker: true }}
+    />
+  );
+}
+```
+
+The result is,
+
+<p align="center">
+  <img alt="Export Column picker modal" src="https://res.cloudinary.com/saisandeepvaddi/image/upload/q_auto/v1599929998/blog/exporting-searching-ant-design-tables/exportable-table-column-picker.jpg" width="500" />
+</p>
+
+You can modify how the data and headers should be in exported file.
+
+There is a `fields` option part of `exportableProps`. Let's say you need to add
+`Full Name` in your CSV combining first name and last name.
+
+```jsx
+const fields = {
+  fullName: {
+    header: "Full Name",
+    formatter: (_fieldValue, record) => {
+      return record?.firstName + " " + record?.lastName;
+    },
+  },
+  country: "Your Country", // Country column will get 'Your Country' as header
+};
+
+return (
+  <Table
+    dataSource={dataSource}
+    columns={columns}
+    exportableProps={{ fields, fileName: "my-table" }}
+  />
+);
+```
+
+Check the docs for more
+[configuration options](https://ant-table-extensions.vercel.app/?path=/docs/get-started--page#exportableprops).
+
+There is an `ExportTableButton` component available if want to just grab the
+button that does all the exporting and put it wherever you want. Please check
+[ExportTableButton docs](https://ant-table-extensions.vercel.app/?path=/docs/demos--advanced-export-button)
+for details.
+
+## Searchable Table
+
+Again, It's as simple as adding `searchable` prop.
+
+```jsx
+function App() {
+  return <Table dataSource={dataSource} columns={columns} searchable />;
+}
+```
+
+Now you'll have a search box.
+
+<p align="center">
+  <img alt="Table with Search box" src="https://res.cloudinary.com/saisandeepvaddi/image/upload/q_auto/v1599929998/blog/exporting-searching-ant-design-tables/searchable-table-simple.jpg" width="500" />
+</p>
+
+It uses [Fuse.js](https://fusejs.io/) under the hood by default.
+
+If you want fuzzy search enabled, use `searchableProps` option.
+
+```jsx
+function App() {
+  return (
+    <Table
+      dataSource={dataSource}
+      columns={columns}
+      searchableProps={{ fuzzySearch: true }}
+    />
+  );
+}
+```
+
+Check the
+[searchableProps](https://ant-table-extensions.vercel.app/?path=/docs/get-started--page#searchableprops)
+to see available search customization.
+
+There is a `SearchTableInput` component available if want to use the input box
+that does the searching and put it wherever you want. Please check
+[SearchTableInput docs](https://ant-table-extensions.vercel.app/?path=/docs/demos--advanced-search-input)
+for details. Click `show code` in the docs to see usage. There's a little more
+state management to do for this.
+
+As you might have guessed, you can use `exportable` and `searchable` to have
+both.
+
+```jsx
+function App() {
+  return (
+    <Table dataSource={dataSource} columns={columns} exportable searchable />
+  );
+}
+```
+
+The result is,
+
+<p align="center">
+  <img alt="Exportable & Searchable Table" src="https://res.cloudinary.com/saisandeepvaddi/image/upload/q_auto/v1599929998/blog/exporting-searching-ant-design-tables/exportable-searchable-simple.jpg" width="500" />
+</p>
+
+GitHub repository at
+[ant-table-extensions](https://github.com/saisandeepvaddi/ant-table-extensions)
+
+Link to my GitHub to check my other projects. -
+[saisandeepvaddi](https://github.com/saisandeepvaddi).
+
+Thank you. Have a great day 🙂.
