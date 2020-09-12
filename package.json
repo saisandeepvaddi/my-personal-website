@@ -10,6 +10,7 @@
   "dependencies": {
     "@next/mdx": "^9.5.3",
     "babel-plugin-import-glob-array": "^0.2.0",
+    "clipboard": "^2.0.6",
     "gray-matter": "^4.0.2",
     "mdx-prism": "^0.3.1",
     "medium-zoom": "^1.0.6",
