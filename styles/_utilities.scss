@@ -1,0 +1,60 @@
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.all-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar {
+  height: 7em;
+  width: 7em;
+  border-radius: 3.5em;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.hr {
+  height: 1px;
+  width: 100%;
+  background: #34475a;
+}
+
+.p-1 {
+  padding: 10px;
+}
+
+.bold {
+  font-weight: 700;
+}

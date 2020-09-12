@@ -1,0 +1,23 @@
+@import "utilities";
+$primary-color-dark: #242423;
+$primary-color-light: #ffffff;
+$text-color-dark: #ffffff;
+$text-color-light: #34475a;
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
