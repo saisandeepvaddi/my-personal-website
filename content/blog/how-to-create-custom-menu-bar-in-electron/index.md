@@ -24,15 +24,15 @@ Finished code is available at
 Here is what it is going to look when we finish.
 
 <p align="center">
-  <img alt="Result image before clicking on menu" src="./result_image.jpg" width="500" />
+  <img alt="Result image before clicking on menu" src="https://res.cloudinary.com/saisandeepvaddi/image/upload/q_auto/v1599930023/blog/how-to-create-custom-menu-bar-in-electron/result_image.jpg" width="500" />
 </p>
 
 <p align="center">
-  <img alt="Result image with menu open" src="./result_image_2.jpg" width="500" />
+  <img alt="Result image with menu open" src="https://res.cloudinary.com/saisandeepvaddi/image/upload/q_auto/v1599930023/blog/how-to-create-custom-menu-bar-in-electron/result_image_2.jpg" width="500" />
 </p>
 
 <p align="center">
-  <img alt="Result image with mouse over close" src="./result_image_3.jpg" width="500" />
+  <img alt="Result image with mouse over close" src="https://res.cloudinary.com/saisandeepvaddi/image/upload/q_auto/v1599930023/blog/how-to-create-custom-menu-bar-in-electron/result_image_3.jpg" width="500" />
 </p>
 
 ## Set up electron project

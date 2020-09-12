@@ -57,7 +57,7 @@ function App() {
 Now you'll have a button which exports the table to a CSV.
 
 <p align="center">
-  <img alt="Table with Export button" src="./exportable-table-simple.jpg" width="500" />
+  <img alt="Table with Export button" src="https://res.cloudinary.com/saisandeepvaddi/image/upload/q_auto/v1599929998/blog/exporting-searching-ant-design-tables/exportable-table-simple.jpg" width="500" />
 </p>
 
 You can also configure how you can export your table,
@@ -79,7 +79,7 @@ function App() {
 The result is,
 
 <p align="center">
-  <img alt="Export Column picker modal" src="./exportable-table-column-picker.jpg" width="500" />
+  <img alt="Export Column picker modal" src="https://res.cloudinary.com/saisandeepvaddi/image/upload/q_auto/v1599929998/blog/exporting-searching-ant-design-tables/exportable-table-column-picker.jpg" width="500" />
 </p>
 
 You can modify how the data and headers should be in exported file.
@@ -128,7 +128,7 @@ function App() {
 Now you'll have a search box.
 
 <p align="center">
-  <img alt="Table with Search box" src="./searchable-table-simple.jpg" width="500" />
+  <img alt="Table with Search box" src="https://res.cloudinary.com/saisandeepvaddi/image/upload/q_auto/v1599929998/blog/exporting-searching-ant-design-tables/searchable-table-simple.jpg" width="500" />
 </p>
 
 It uses [Fuse.js](https://fusejs.io/) under the hood by default.
@@ -171,7 +171,7 @@ function App() {
 The result is,
 
 <p align="center">
-  <img alt="Exportable & Searchable Table" src="./exportable-searchable-simple.jpg" width="500" />
+  <img alt="Exportable & Searchable Table" src="https://res.cloudinary.com/saisandeepvaddi/image/upload/q_auto/v1599929998/blog/exporting-searching-ant-design-tables/exportable-searchable-simple.jpg" width="500" />
 </p>
 
 GitHub repository at

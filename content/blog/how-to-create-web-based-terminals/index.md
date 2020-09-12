@@ -337,7 +337,7 @@ When both server and client are running, you'll see a terminal in your browser.
 Please check xtermjs documentation for other styling customization like height,
 width.
 
-![Final output](./final-output.jpg)
+![Final output](https://res.cloudinary.com/saisandeepvaddi/image/upload/q_auto/v1599930054/blog/how-to-create-web-based-terminals/final-output.jpg)
 
 ### For Electron users
 
