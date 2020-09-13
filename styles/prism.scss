@@ -232,14 +232,6 @@ code[class*="language-"] {
   background: #2a3338;
 }
 
-:not(pre) > code[class*="language-"] {
-  font-size: 14px;
-  background: transparent;
-  color: rgb(58, 75, 110);
-  // padding-left: 5px;
-  // padding-right: 5px;
-  font-weight: 800;
-}
 
 .dark-mode {
   :not(pre) > code[class*="language-"] {
@@ -272,20 +264,25 @@ pre[class*="language"]::before {
   font-weight: 600;
 }
 
-pre[class*="language-js"]::before {
-  content: "JS";
-  background: #f7df1e;
-  color: #2a3338;
-}
+// pre[class*="language-js"]::before {
+//   content: "JS";
+//   background: #f7df1e;
+//   color: #2a3338;
+// }
 
-pre[class*="language-html"]::before {
-  content: "HTML";
-  background: #E44D26;
-  color: #ffffff;
-}
+// pre[class*="language-html"]::before {
+//   content: "HTML";
+//   background: #E44D26;
+//   color: #ffffff;
+// }
 
-pre[class*="language-css"]::before {
-  content: "CSS";
-  background: #264DE4;
-  color: #ffffff;
+// pre[class*="language-css"]::before {
+//   content: "CSS";
+//   background: #264DE4;
+//   color: #ffffff;
+// }
+
+:not(pre) > code {
+  font-size: 1.1em;
+  font-weight: 900;
 }

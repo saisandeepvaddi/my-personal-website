@@ -1,8 +1,11 @@
 @import "utilities";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap');
+
 $primary-color-dark: #242423;
 $primary-color-light: #ffffff;
 $text-color-dark: #ffffff;
 $text-color-light: #34475a;
+$link-color: #2a8d8f;
 
 body,
 html {
@@ -14,10 +17,42 @@ html {
 }
 
 body {
-  font-family: sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  line-height: 1.5;
+  padding: 4em 1em;
+  color: $text-color-light;
 }
 
 * {
   box-sizing: border-box;
 }
 
+a {
+  color: $text-color-light;
+  font-weight: 600;
+  position: relative;
+  padding: 0 0.25em;
+  
+}
+
+article.blog-post-container {
+  a {
+    text-decoration: none;
+    background: linear-gradient(transparent 70%, #2a9d9049 0);
+    &:hover {
+      // color: #ffffff;
+      background: #2a8d8f;
+      background: linear-gradient(transparent 80%, #2a9d90a4 0);
+    }
+  }
+}
+
+// a::after {
+//   content: "";
+//   width: 100%;
+//   left: 0;
+//   position: absolute;
+//   bottom: 0px;
+//   height: 3px;
+//   // background: #2a9d902f;
+// }

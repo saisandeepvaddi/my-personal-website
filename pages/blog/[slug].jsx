@@ -13,7 +13,7 @@ function Post({ source, frontMatter, stats }) {
   const content = hydrate(source, components);
   return (
     <Layout>
-      <article>
+      <article className="blog-post-container">
         <h1>{frontMatter.title}</h1>
         <h2>{stats?.text}</h2>
         <h2>{stats?.words} words.</h2>

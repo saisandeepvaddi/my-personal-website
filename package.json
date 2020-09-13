@@ -50,11 +50,11 @@
     "url": "git+https://github.com/saisandeepvaddi/saisandeepvaddi.com.git"
   },
   "scripts": {
-    "build": "next build || next build",
-    "develop": "next -p 7777",
+    "build": "next build",
+    "develop": "next dev -p 7777",
     "prettier": "prettier --write \"**/*.{html,js,jsx,json,md,mdx,yml}\"",
     "lint": "eslint --ext .jsx,.js .",
     "lint:fix": "eslint --fix --ext .jsx,.js .",
-    "start": "yarn develop"
+    "start": "next start"
   }
 }

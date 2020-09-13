@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import DarkModeToggle from "./dark-mode-toggle";
+// import DarkModeToggle from "./dark-mode-toggle";
 
 function Nav() {
   return (
@@ -16,9 +16,9 @@ function Nav() {
             <a>About</a>
           </Link>
         </li>
-        <li>
+        {/* <li>
           <DarkModeToggle />
-        </li>
+        </li> */}
       </ul>
     </nav>
   );
