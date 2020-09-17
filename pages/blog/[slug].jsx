@@ -7,16 +7,23 @@ import hydrate from "next-mdx-remote/hydrate";
 import readingTime from "reading-time";
 import Layout from "../../components/layout";
 import "prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard";
+import { formatDate } from "../../utils/general";
 
 const components = {};
 function Post({ source, frontMatter, stats }) {
   const content = hydrate(source, components);
   return (
     <Layout>
-      <article className="blog-post-container">
+      <article className="blog-post blog-post-container">
         <h1>{frontMatter.title}</h1>
-        <h2>{stats?.text}</h2>
-        <h2>{stats?.words} words.</h2>
+        <div
+          className="d-flex justify-between flex-wrap"
+          style={{ marginTop: 10 }}
+        >
+          <h4 className="color-disabled">{formatDate(frontMatter?.date)}</h4>
+          <h4 className="color-disabled">{stats?.text}</h4>
+          <h4 className="color-disabled">{stats?.words} words</h4>
+        </div>
         {content}
       </article>
     </Layout>
