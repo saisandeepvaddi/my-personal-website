@@ -7,19 +7,19 @@ function Nav() {
       <div className="flex items-center justify-between px-4 py-3">
         <div>
           <Link href="/">
-            <a>Home</a>
+            <a className="nav-link">Home</a>
           </Link>
         </div>
         <nav>
           <ul className="flex items-center space-x-4">
             <li>
               <Link href="/blog">
-                <a>Blog</a>
+                <a className="nav-link">Blog</a>
               </Link>
             </li>
             <li>
               <Link href="/about">
-                <a>About</a>
+                <a className="nav-link">About</a>
               </Link>
             </li>
           </ul>
