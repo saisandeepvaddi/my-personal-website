@@ -14,15 +14,14 @@ function Post({ source, frontMatter, stats }) {
   const content = hydrate(source, components);
   return (
     <Layout>
-      <article className="blog-post blog-post-container">
-        <h1>{frontMatter.title}</h1>
-        <div
-          className="d-flex justify-between flex-wrap"
-          style={{ marginTop: 10 }}
-        >
-          <h4 className="color-disabled">{formatDate(frontMatter?.date)}</h4>
-          <h4 className="color-disabled">{stats?.text}</h4>
-          <h4 className="color-disabled">{stats?.words} words</h4>
+      <article className="container mx-auto max-w-3xl p-4">
+        <h1 className="text-4xl text-blue-900">{frontMatter.title}</h1>
+        <div className="flex justify-between flex-wrap mb-4">
+          <span className="text-gray-600 italic">
+            {formatDate(frontMatter?.date)}
+          </span>
+          <span className="text-gray-600 italic">{stats?.text}</span>
+          <span className="text-gray-600 italic">{stats?.words} words</span>
         </div>
         {content}
       </article>

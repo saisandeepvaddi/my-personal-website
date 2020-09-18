@@ -5,9 +5,7 @@ function Layout({ children }) {
   return (
     <main>
       <Nav />
-      <section style={{ maxWidth: "50em", margin: "0 auto" }}>
-        {children}
-      </section>
+      <section className="container mx-auto p-4">{children}</section>
     </main>
   );
 }

@@ -1,26 +1,31 @@
 import React from "react";
 import Link from "next/link";
-// import DarkModeToggle from "./dark-mode-toggle";
 
 function Nav() {
   return (
-    <nav>
-      <ul>
-        <li>
-          <Link href="/blog">
-            <a>Blog</a>
+    <header className="bg-gray-900 text-white sticky top-0 z-50 shadow-md">
+      <div className="flex items-center justify-between px-4 py-3">
+        <div>
+          <Link href="/">
+            <a>Home</a>
           </Link>
-        </li>
-        <li>
-          <Link href="/about">
-            <a>About</a>
-          </Link>
-        </li>
-        {/* <li>
-          <DarkModeToggle />
-        </li> */}
-      </ul>
-    </nav>
+        </div>
+        <nav>
+          <ul className="flex items-center space-x-4">
+            <li>
+              <Link href="/blog">
+                <a>Blog</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/about">
+                <a>About</a>
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
   );
 }
 

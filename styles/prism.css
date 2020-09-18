@@ -88,7 +88,6 @@ pre[class*="language-"] {
 .language-css .token.string,
 .style .token.string {
   color: #d4d4d4;
-  // background: #1e1e1e;
 }
 
 .token.atrule,
@@ -215,7 +214,6 @@ pre[class*="language-"] > code[class*="language-"] {
   white-space: pre;
 }
 
-
 .gatsby-highlight-code-line {
   background-color: #44330050;
   display: block;
@@ -232,20 +230,18 @@ code[class*="language-"] {
   background: #2a3338;
 }
 
-
-.dark-mode {
+/* .dark-mode {
   :not(pre) > code[class*="language-"] {
     color: white;
   }
-}
-
+} */
 
 .remark-code-title {
   display: inline-block;
   background-color: rgba(211, 42, 42, 0.76);
   padding: 7px;
   color: white;
-  margin-bottom: -0.5em; // prism-js adds 0.5em
+  margin-bottom: -0.5em;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 }
@@ -264,25 +260,26 @@ pre[class*="language"]::before {
   font-weight: 600;
 }
 
-// pre[class*="language-js"]::before {
-//   content: "JS";
-//   background: #f7df1e;
-//   color: #2a3338;
-// }
-
-// pre[class*="language-html"]::before {
-//   content: "HTML";
-//   background: #E44D26;
-//   color: #ffffff;
-// }
-
-// pre[class*="language-css"]::before {
-//   content: "CSS";
-//   background: #264DE4;
-//   color: #ffffff;
-// }
+/* pre[class*="language-js"]::before {
+   content: "JS";
+   background: #f7df1e;
+   color: #2a3338;
+ }
+ pre[class*="language-html"]::before {
+   content: "HTML";
+   background: #E44D26;
+   color: #ffffff;
+ }
+ pre[class*="language-css"]::before {
+   content: "CSS";
+   background: #264DE4;
+   color: #ffffff;
+ } */
 
 :not(pre) > code {
-  font-size: 1.1em;
-  font-weight: 900;
+  background: #d6d6d6;
+  border: 1px solid gray;
+  border-radius: 5px;
+  font-size: 0.85em;
+  padding: 0 3px;
 }

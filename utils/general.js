@@ -2,11 +2,24 @@ export function isValidDate(date) {
   return date && date.valueOf && !Number.isNaN(date.valueOf());
 }
 
-export function formatDate(maybeDate, options = { showTime: false }) {
+const monthNames = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+export function formatDate(maybeDate) {
   const date = new Date(maybeDate);
   return isValidDate(date)
-    ? `${date.toLocaleDateString()}${
-        options.showTime ? " " + date.toLocaleTimeString() : ""
-      }`
+    ? `${monthNames[date.getMonth()]} ${date.getDay()}, ${date.getFullYear()}`
     : "";
 }

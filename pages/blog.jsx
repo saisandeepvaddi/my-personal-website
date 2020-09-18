@@ -6,17 +6,20 @@ import { readFileSync } from "fs";
 import { getFrontMatter } from "../utils/mdxUtils";
 import Link from "next/link";
 import { getBlogPostFileMeta } from "../utils/blog";
+import { formatDate } from "../utils/general";
 
 function Blog({ posts }) {
   return (
     <Layout>
-      <ul>
+      <ul className="space-y-4">
         {posts.map(({ matter, slug }, i) => (
           <li key={matter.title ?? i}>
             <Link href={`/blog/${slug}`}>
-              <a>{matter.title}</a>
+              <a className="text-xl font-bold styled-link">{matter.title}</a>
             </Link>
-            <span>{matter.date}</span>
+            <div>
+              <span className="text-sm  italic">{formatDate(matter.date)}</span>
+            </div>
             <p>{matter.description}</p>
           </li>
         ))}
