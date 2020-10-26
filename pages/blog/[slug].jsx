@@ -55,7 +55,10 @@ export async function getStaticProps({ params }) {
         require("remark-slug"),
         require("remark-code-titles"),
       ],
-      rehypePlugins: [require("mdx-prism")],
+      rehypePlugins: [
+        require("mdx-prism"),
+        require("rehype-autolink-headings"),
+      ],
     },
     scope: frontMatter,
   });
