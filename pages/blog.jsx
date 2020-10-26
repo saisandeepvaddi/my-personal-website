@@ -10,10 +10,6 @@ import { formatDate } from "../utils/general";
 import Tag from "../components/Tag/Tag";
 
 function Blog({ posts }) {
-  if (typeof window !== "undefined") {
-    console.log("posts: ", posts);
-  }
-
   const [filteredPosts, setFilteredPosts] = React.useState(posts);
   const [isFiltered, setIsFiltered] = React.useState(false);
 
