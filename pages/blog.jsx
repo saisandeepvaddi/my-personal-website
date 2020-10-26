@@ -18,7 +18,7 @@ function Blog({ posts }) {
               <a className="text-xl font-bold styled-link">{matter.title}</a>
             </Link>
             <div>
-              <span className="text-sm  italic">{formatDate(matter.date)}</span>
+              <span className="text-sm italic">{formatDate(matter.date)}</span>
             </div>
             <p>{matter.description}</p>
           </li>
@@ -37,6 +37,8 @@ export async function getStaticProps() {
     const { data } = getFrontMatter(content);
     return { matter: data, slug };
   });
+
+  posts.sort((a, b) => new Date(b.matter.date) - new Date(a.matter.date));
 
   return {
     props: {

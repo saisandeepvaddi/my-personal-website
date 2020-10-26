@@ -4,7 +4,7 @@ import Link from "next/link";
 function Nav() {
   return (
     <header className="bg-gray-900 text-white sticky top-0 z-50 shadow-md">
-      <div className="flex items-center justify-between px-4 py-3">
+      <div className="flex items-center justify-between md:justify-around px-4 py-3">
         <div>
           <Link href="/">
             <a className="nav-link">Home</a>

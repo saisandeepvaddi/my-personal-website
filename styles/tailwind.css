@@ -51,4 +51,12 @@
     background: #2a8d8f;
     background: linear-gradient(transparent 80%, #2a9d90a4 0);
   }
+
+  a.list-item {
+    background: none !important;
+  }
+  a.list-item:hover {
+    background: #34475a !important;
+    background: linear-gradient(transparent 90%, #34475a 0) !important;
+  }
 }

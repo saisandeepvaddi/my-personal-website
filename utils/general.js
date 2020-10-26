@@ -20,6 +20,6 @@ const monthNames = [
 export function formatDate(maybeDate) {
   const date = new Date(maybeDate);
   return isValidDate(date)
-    ? `${monthNames[date.getMonth()]} ${date.getDay()}, ${date.getFullYear()}`
+    ? `${monthNames[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
     : "";
 }

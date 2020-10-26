@@ -8,6 +8,9 @@ module.exports = {
       display: ["Roboto", "sans-serif"],
       body: ["Roboto", "sans-serif"],
     },
+    container: {
+      center: true,
+    },
   },
   variants: {},
   plugins: [],
