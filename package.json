@@ -13,7 +13,7 @@
     "gray-matter": "^4.0.2",
     "mdx-prism": "^0.3.1",
     "medium-zoom": "^1.0.6",
-    "next": "^9.5.3",
+    "next": "^9.5.4",
     "next-mdx-remote": "^1.0.0",
     "postcss-flexbugs-fixes": "^4.2.1",
     "postcss-preset-env": "^6.7.0",
