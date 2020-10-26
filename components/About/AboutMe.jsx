@@ -1,13 +1,16 @@
-import Link from "next/link";
 import React from "react";
 
 function AboutMe() {
   return (
     <React.Fragment>
       <section>
-        <p>
-          Hey There 👋! I&apos;m <i>Sai Sandeep Vaddi</i>.
-        </p>
+        <h1 className="space-x-5">
+          <span>Hey 👋!</span>{" "}
+          <span>
+            I&apos;m <em>Sai Sandeep Vaddi</em>
+          </span>
+          .
+        </h1>
         <p>
           I&apos;m a Software Developer at{" "}
           <a
