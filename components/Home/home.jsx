@@ -1,8 +1,8 @@
 import React from "react";
-import Footer from "../Footer/Footer";
-import MyIntro from "../MyIntro/MyIntro";
-import TopArticles from "./TopArticles";
-import TopProjects from "./TopProjects";
+import dynamic from "next/dynamic";
+const MyIntro = dynamic(() => import("../MyIntro/MyIntro"));
+const TopArticles = dynamic(() => import("./TopArticles"));
+const TopProjects = dynamic(() => import("./TopProjects"));
 
 function Home() {
   return (

@@ -42,6 +42,7 @@ function TopProjects() {
         href="https://github.com/saisandeepvaddi"
         target="blank"
         rel="noopener noreferrer"
+        aria-label="All projects"
       >
         See More
       </a>

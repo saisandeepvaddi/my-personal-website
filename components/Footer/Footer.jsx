@@ -19,6 +19,7 @@ function Footer() {
               className="social-link"
             >
               <DiGithubBadge size={25} />
+              <span className="sr-only">GitHub</span>
             </a>
           </li>
           <li>
@@ -29,6 +30,7 @@ function Footer() {
               className="social-link"
             >
               <FiTwitter size={25} />
+              <span className="sr-only">Twitter</span>
             </a>
           </li>
           <li>
@@ -39,6 +41,7 @@ function Footer() {
               className="social-link"
             >
               <FiLinkedin size={25} />
+              <span className="sr-only">LinkedIn</span>
             </a>
           </li>
           <li>
@@ -49,6 +52,7 @@ function Footer() {
               href={`mailto:saisandeepvaddi@gmail.com`}
             >
               <AiOutlineMail size={25} />
+              <span className="sr-only">Email</span>
             </a>
           </li>
         </ul>

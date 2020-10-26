@@ -5,6 +5,7 @@ function SEO({ title, description, canonical }) {
   return (
     <React.Fragment>
       <Helmet>
+        <html lang="en" />
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge"></meta>
         <meta

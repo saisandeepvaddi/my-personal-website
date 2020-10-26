@@ -31,7 +31,7 @@ function TopArticles() {
       </ul>
       <div className="mt-4"></div>
       <Link href="/blog">
-        <a>See More</a>
+        <a aria-label="All blog posts">See More</a>
       </Link>
     </section>
   );
