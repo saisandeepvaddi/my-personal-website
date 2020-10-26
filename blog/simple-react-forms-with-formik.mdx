@@ -1,5 +1,5 @@
 ---
-tags: [react, javascript]
+tags: [React, JavaScript]
 title: Simple structure to write forms in React with Formik
 description: We'll see how we can write forms in React with Formik to create small, well-organized components and avoid form-management headaches.
 date: "2020-09-07"
@@ -65,19 +65,30 @@ Even if you don't need both `create` and `edit`, writing a form container keeps 
 If we are using both forms, I also send an extra `isNew` prop to `<UserForm />` to know whether it's a `create` form or an `edit` form. This helps to display correct error messages and other text.
 
 <p align="center">
-  <img width="700" alt="A diagram for form structure" src="https://res.cloudinary.com/saisandeepvaddi/image/upload/v1599452764/blog/simple-react-forms-with-formik/formik-blog-post-diagram.png" />
+  <img
+    width="700"
+    alt="A diagram for form structure"
+    src="https://res.cloudinary.com/saisandeepvaddi/image/upload/v1599452764/blog/simple-react-forms-with-formik/formik-blog-post-diagram.png"
+  />
 </p>
 
 ## User account form
 
 Here's the [CodeSandbox Link](https://codesandbox.io/s/demo-for-formik-tutorial-blogpost-7y7t1?autoresize=1&fontsize=14&hidenavigation=1&theme=dark) to see the code for a sample User account form along with some utils and validations.
 
-<iframe src="https://codesandbox.io/embed/demo-for-formik-tutorial-blogpost-7y7t1?autoresize=1&fontsize=14&hidenavigation=1&theme=dark"
-     style={{width: "100%", height: "500px", border: 0, borderRadius: "4px", overflow: "hidden"}}
-     title="demo-for-formik-tutorial-blogpost"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-   ></iframe>
+<iframe
+  src="https://codesandbox.io/embed/demo-for-formik-tutorial-blogpost-7y7t1?autoresize=1&fontsize=14&hidenavigation=1&theme=dark"
+  style={{
+    width: "100%",
+    height: "500px",
+    border: 0,
+    borderRadius: "4px",
+    overflow: "hidden",
+  }}
+  title="demo-for-formik-tutorial-blogpost"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
 
 [CodeSandbox Link](https://codesandbox.io/s/demo-for-formik-tutorial-blogpost-7y7t1?autoresize=1&fontsize=14&hidenavigation=1&theme=dark)
 

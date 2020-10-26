@@ -11,6 +11,15 @@ module.exports = {
     container: {
       center: true,
     },
+    extend: {
+      colors: {
+        typescript: "#235a97",
+        react: "#61dafb",
+        javascript: "#f7df1e",
+        electron: "#2f3241",
+        nodejs: "#026e00",
+      },
+    },
   },
   variants: {},
   plugins: [],
