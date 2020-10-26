@@ -8,6 +8,7 @@ import Link from "next/link";
 import { getBlogPostFileMeta } from "../utils/blog";
 import { formatDate } from "../utils/general";
 import Tag from "../components/Tag/Tag";
+import SEO from "../components/SEO/SEO";
 
 function Blog({ posts }) {
   const [filteredPosts, setFilteredPosts] = React.useState(posts);
@@ -28,6 +29,10 @@ function Blog({ posts }) {
 
   return (
     <Layout>
+      <SEO
+        title="Blog | Sai Sandeep Vaddi"
+        description="My blog posts mostly about JavaScript, TypeScript, React, and NodeJS."
+      />
       {isFiltered > 0 && (
         <div className="flex justify-end">
           <button

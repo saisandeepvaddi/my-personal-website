@@ -8,12 +8,21 @@ import readingTime from "reading-time";
 import Layout from "../../components/layout";
 import "prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard";
 import { formatDate } from "../../utils/general";
+import SEO from "../../components/SEO/SEO";
 
 const components = {};
-function Post({ source, frontMatter, stats }) {
+function Post({ source, frontMatter, stats, slug }) {
   const content = hydrate(source, components);
   return (
     <Layout>
+      <SEO
+        title={frontMatter.title ?? "Blog - Sai Sandeep Vaddi"}
+        description={
+          frontMatter.title ??
+          content?.substring(0, Math.max(200, content.length))
+        }
+        canonical={`https://saisandeepvaddi.com/blog/${slug}`}
+      />
       <article className="blog-post container mx-auto max-w-3xl p-4">
         <h1 className="text-4xl text-blue-900">{frontMatter.title}</h1>
         <div className="flex justify-between flex-wrap mb-4">
