@@ -44,7 +44,7 @@ function TopProjects() {
         rel="noopener noreferrer"
         aria-label="All projects"
       >
-        See More
+        See all projects
       </a>
     </section>
   );
