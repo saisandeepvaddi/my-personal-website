@@ -8,7 +8,10 @@ function MyIntro() {
         alt="My Profile Pic"
         height={125}
         width={125}
-        className="rounded-full"
+        className="rounded-full p-0 m-0"
+        loading={"eager"}
+        layout="fixed"
+        priority
       />
       <div className="h-full md:justify-self-start md:grid md:place-items-center md:row-span-2 md:col-span-2">
         <div className="text-center md:text-left">

@@ -24,7 +24,9 @@ Out of different ways you can use `Formik` to create forms, the `useFormik` hook
 The minimum values you need to add in the `config` object are:
 
 1. `initialValues` object - Values that go inside the form fields when the form is rendered. This is the initial state of the form.
+
 2. `onSubmit` function - Receives the final values when the user submits the form. Use this function to clean up the `values` if needed before sending it to the server.
+
 3. `validate` function - Run validations on values and return errors. There is an alternative `validationSchema` which you can use to define a schema using [Yup](https://github.com/jquense/yup) object schema validation library.
 
 ```jsx

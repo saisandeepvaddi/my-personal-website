@@ -24,7 +24,7 @@ function Post({ source, frontMatter, stats, slug }) {
         canonical={`https://saisandeepvaddi.com/blog/${slug}`}
       />
       <article className="blog-post container mx-auto max-w-3xl p-4">
-        <h1 className="text-4xl text-blue-900">{frontMatter.title}</h1>
+        <h1 className="text-4xl text-gray-700">{frontMatter.title}</h1>
         <div className="flex justify-between flex-wrap mb-4">
           <span className="text-gray-600 italic">
             {formatDate(frontMatter?.date)}
