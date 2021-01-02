@@ -18,13 +18,14 @@ const articleLinks = [
 
 function TopArticles() {
   return (
-    <section className="container mx-auto max-w-2xl">
-      <h2 className="mb-3">Blog Posts</h2>
+    <section className="container mx-auto max-w-2xl prose prose-sm">
+      <h3 className="mb-3 font-bold">Blog Posts</h3>
+
       <ul className="space-y-2 md:space-y-4">
         {articleLinks.map((article) => (
           <li key={article.title}>
             <Link href={article.href}>
-              <a className="list-item">{article.title}</a>
+              <a className="list-item hover:underline">{article.title}</a>
             </Link>
           </li>
         ))}

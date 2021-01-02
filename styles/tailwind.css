@@ -45,7 +45,7 @@
     @apply text-xl;
   } */
 
-  a:hover {
+  /* a:hover {
     @apply font-bold;
   }
 
@@ -66,7 +66,27 @@
   a.list-item:hover {
     background: #34475a !important;
     background: linear-gradient(transparent 90%, #34475a 0) !important;
+  } */
+
+  a:not(.nav-link):not([aria-hidden="true"]):not(.list-item) {
+    @apply font-semibold;
+    text-decoration: none;
+    background: linear-gradient(transparent 90%, #2a9d9049 0);
   }
+
+  a:not(.nav-link):not([aria-hidden="true"]):not(.list-item):hover {
+    background: #2a8d8f;
+    background: linear-gradient(transparent 80%, #2a9d90a4 0);
+  }
+
+  /* a.list-item {
+    background: none !important;
+  }
+
+  a.list-item:hover {
+    background: #34475a !important;
+    background: linear-gradient(transparent 90%, #34475a 0) !important;
+  } */
 
   /* For showing link icon on blog post headings */
   span.icon.icon-link {

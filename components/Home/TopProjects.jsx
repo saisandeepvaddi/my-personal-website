@@ -17,17 +17,20 @@ const projectLinks = [
 
 function TopProjects() {
   return (
-    <section className="container mx-auto max-w-2xl">
-      <h2 className="mb-0">Recent Projects</h2>
-      <small>
-        Only personal &amp; recent open-source projects listed here.
-      </small>
+    <section className="container mx-auto max-w-2xl prose prose-sm">
+      <h3 className="mb-0 font-bold">Recent Projects</h3>
+      <div className="my-2">
+        <small>
+          Only personal &amp; recent open-source projects listed here.
+        </small>
+      </div>
+
       <ul className="space-y-2 md:space-y-4 mt-2">
         {projectLinks.map((project) => (
           <li key={project.title}>
             <a
               href={project.href}
-              className="list-item"
+              className="list-item hover:underline"
               target="blank"
               rel="noopener noreferrer"
             >
@@ -37,7 +40,6 @@ function TopProjects() {
         ))}
       </ul>
       <div className="mt-4"></div>
-
       <a
         href="https://github.com/saisandeepvaddi"
         target="blank"
