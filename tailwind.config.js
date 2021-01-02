@@ -15,6 +15,7 @@ module.exports = {
         javascript: "#f7df1e",
         electron: "#2f3241",
         nodejs: "#026e00",
+        purple: "#625772",
       },
     },
   },

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 function Nav() {
   return (
-    <header className="bg-gray-900 text-white sticky top-0 z-50 shadow-md">
+    <header className="bg-purple text-white sticky top-0 z-50 shadow-md">
       <div className="container mx-auto max-w-2xl flex items-center justify-between px-4 py-3">
         <div>
           <Link href="/">
