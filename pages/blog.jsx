@@ -43,7 +43,7 @@ function Blog({ posts }) {
           </button>
         </div>
       )}
-      <ul className="space-y-4">
+      <ul className="space-y-4 prose max-w-3xl">
         {filteredPosts.map(({ matter, slug }, i) => (
           <li key={matter.title ?? i}>
             <Link href={`/blog/${slug}`}>

@@ -45,9 +45,7 @@ pre[class*="language-"] {
   color: #db4c69;
   background: #f9f2f4;
 }
-/*********************************************************
-* Tokens
-*/
+
 .namespace {
   opacity: 0.7;
 }
@@ -167,9 +165,7 @@ pre[class*="language-"] {
 .token.namespace {
   color: #4ec9b0;
 }
-/*********************************************************
-* Language Specific
-*/
+
 pre[class*="language-javascript"],
 code[class*="language-javascript"] {
   color: #4ec9b0;
@@ -188,9 +184,7 @@ code[class*="language-html"] {
 .language-html .token.punctuation {
   color: #808080;
 }
-/*********************************************************
-* Line highlighting
-*/
+
 pre[data-line] {
   position: relative;
 }
@@ -230,12 +224,6 @@ code[class*="language-"] {
   background: #2a3338;
 }
 
-/* .dark-mode {
-  :not(pre) > code[class*="language-"] {
-    color: white;
-  }
-} */
-
 .remark-code-title {
   display: inline-block;
   background-color: rgba(211, 42, 42, 0.76);
@@ -260,27 +248,26 @@ pre[class*="language"]::before {
   font-weight: 600;
 }
 
-/* pre[class*="language-js"]::before {
-   content: "JS";
-   background: #f7df1e;
-   color: #2a3338;
- }
- pre[class*="language-html"]::before {
-   content: "HTML";
-   background: #E44D26;
-   color: #ffffff;
- }
- pre[class*="language-css"]::before {
-   content: "CSS";
-   background: #264DE4;
-   color: #ffffff;
- } */
-
-:not(pre) > code {
+/* :not(pre) > code {
   background: #dbdada;
-  /* border: 1px solid gray; */
   border-radius: 5px;
   font-size: 0.85em;
   font-weight: bold;
   padding: 0 3px;
+} */
+
+/* pre[class*="language-js"]::before {
+  content: "JS";
+  background: #f7df1e;
+  color: #2a3338;
 }
+pre[class*="language-html"]::before {
+  content: "HTML";
+  background: #e44d26;
+  color: #ffffff;
+}
+pre[class*="language-css"]::before {
+  content: "CSS";
+  background: #065f9f;
+  color: #ffffff;
+} */

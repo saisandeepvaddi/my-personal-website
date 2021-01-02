@@ -3,7 +3,7 @@ import React from "react";
 function AboutMe() {
   return (
     <React.Fragment>
-      <section>
+      <article className="prose container max-w-3xl">
         <h1 className="space-x-5">
           <span>Hey 👋!</span>{" "}
           <span>
@@ -59,7 +59,7 @@ function AboutMe() {
           <a href="mailto:saisandeepvaddi@gmail.com">email</a> or any of the
           contact links below.{" "}
         </p>
-      </section>
+      </article>
     </React.Fragment>
   );
 }

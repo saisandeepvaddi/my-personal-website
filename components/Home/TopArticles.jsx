@@ -19,7 +19,7 @@ const articleLinks = [
 function TopArticles() {
   return (
     <section className="container mx-auto max-w-2xl">
-      <h2>Blog Posts</h2>
+      <h2 className="mb-3">Blog Posts</h2>
       <ul className="space-y-2 md:space-y-4">
         {articleLinks.map((article) => (
           <li key={article.title}>
