@@ -18,7 +18,7 @@ const articleLinks = [
 
 function TopArticles() {
   return (
-    <section className="container mx-auto max-w-2xl prose prose-sm">
+    <section className="container mx-auto max-w-2xl prose prose-sm top-item-list">
       <h3 className="mb-3 font-bold">Blog Posts</h3>
 
       <ul className="space-y-2 md:space-y-4">

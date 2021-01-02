@@ -71,12 +71,12 @@
   a:not(.nav-link):not([aria-hidden="true"]):not(.list-item) {
     @apply font-semibold;
     text-decoration: none;
-    background: linear-gradient(transparent 90%, #2a9d9049 0);
+    background: linear-gradient(transparent 90%, #62577249 0);
   }
 
   a:not(.nav-link):not([aria-hidden="true"]):not(.list-item):hover {
-    background: #2a8d8f;
-    background: linear-gradient(transparent 80%, #2a9d90a4 0);
+    background: #827498;
+    background: linear-gradient(transparent 85%, #625772a4 0);
   }
 
   /* a.list-item {
@@ -87,6 +87,10 @@
     background: #34475a !important;
     background: linear-gradient(transparent 90%, #34475a 0) !important;
   } */
+
+  .top-item-list a {
+    @apply no-underline;
+  }
 
   /* For showing link icon on blog post headings */
   span.icon.icon-link {

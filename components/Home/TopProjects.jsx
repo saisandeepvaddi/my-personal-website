@@ -17,7 +17,7 @@ const projectLinks = [
 
 function TopProjects() {
   return (
-    <section className="container mx-auto max-w-2xl prose prose-sm">
+    <section className="container mx-auto max-w-2xl prose prose-sm top-item-list">
       <h3 className="mb-0 font-bold">Recent Projects</h3>
       <div className="my-2">
         <small>

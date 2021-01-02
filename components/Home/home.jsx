@@ -1,8 +1,7 @@
 import React from "react";
-import dynamic from "next/dynamic";
-const MyIntro = dynamic(() => import("../MyIntro/MyIntro"));
-const TopArticles = dynamic(() => import("./TopArticles"));
-const TopProjects = dynamic(() => import("./TopProjects"));
+import MyIntro from "../MyIntro/MyIntro";
+import TopArticles from "./TopArticles";
+import TopProjects from "./TopProjects";
 
 function Home() {
   return (
