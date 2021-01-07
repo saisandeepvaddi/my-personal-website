@@ -1,0 +1,234 @@
+---
+title: How to communicate between Content Script, Popup, and Background in Browser Extension development
+date: "2021-01-06"
+tags: [JavaScript, TypeScript]
+description: "Details about how to use message passing between Content Script, Popup and Background pages in WebExtensions."
+---
+
+Message passing between different parts of a browser extension is the most confusing part when starting with browser extension development. This post is about how **_I_** generally structure my web extensions code to communicate between Content Script, Background, and popups (Browser Action).
+
+These are the pieces we will use.
+
+1. Create IDs for the messages we will be using in a file. We can use regular object literals or `enum` if you use TypeScript.
+2. Create a mapping ( `Map<MessageID, callback>` or regular object literal ) where we fix the message id which we created in Step 1 with a callback to run when the message with that ID arrives.
+3. Register message listeners. Loop through the items in the `Map` we created in Step 2 and add a listener which is the `value` for each key (`MessageID`).
+
+## Let's write some code
+
+The finished code is available in my GitHub at [web-extension-communication-blog-post](https://github.com/saisandeepvaddi/web-extension-communication-blog-post). I recommend you open the link and follow along with me. We will also use a polyfill so we don't have to deal with the API differences between Firefox and Chrome. Also, the polyfill allows Promise-based API for both Firefox and Chrome. I am using [webextension-polyfill-ts](https://www.npmjs.com/package/webextension-polyfill-ts) which is a TypeScript wrapper for Mozilla's [webextension-polyfill](https://github.com/mozilla/webextension-polyfill).
+
+Our messages will be simple. We will exchange "Hi" or "Bye" between Content Script and Background.
+
+First, we will write two utility functions that we can use to send messages between Content Script and Background.
+
+```typescript
+// Messenger.ts
+import { browser } from "webextension-polyfill-ts";
+
+const Messenger = {
+  /**
+   * Send a message to Background script
+   *
+   * @param {BackgroundMessage} type Background Message Type
+   * @param {*} [data=null]
+   * @return {*}
+   */
+  async sendMessageToBackground(type, data = null) {
+    try {
+      const response = await browser.runtime.sendMessage({ type, data });
+      return response;
+    } catch (error) {
+      console.error("sendMessageToBackground error: ", error);
+      return null;
+    }
+  },
+
+  /**
+   * Send a message to Content Script of a Tab
+   *
+   * @param {number} tabID Tab ID
+   * @param {ContentScriptMessage} type
+   * @param {*} [data=null]
+   * @return {*}
+   */
+  async sendMessageToContentScript(tabID, type, data = null) {
+    try {
+      // Notice the API difference - browser.tabs to send to content script but browser.runtime to send to background.
+      const response = await browser.tabs.sendMessage(tabID, { type, data });
+      console.log("response:", response);
+      return response;
+    } catch (error) {
+      console.error("sendMessageToContentScript error: ", error);
+      return null;
+    }
+  },
+};
+```
+
+I like to put these two functions in a separate file because we don't have to constantly throw in `browser.tabs` or `browser.runtime` API everywhere. We get cleaner code with `Messenger.sendMessageToBackground` and `Messenger.sendMessageToContentScript` functions.
+
+Remember I told you in Step 1 that we will create IDs for each type of messages, let's define those. I am using TypeScript `enums` because they are easy to type the functions, but you can use simple objects as well. The IDs can be simple numbers - 1, 2, etc.,
+
+```typescript
+// messages.ts
+export enum ContentScriptMessages {
+  SAY_HELLO_TO_CS,
+  SAY_BYE_TO_CS,
+}
+
+export enum BackgroundMessages {
+  SAY_HELLO_TO_BG,
+  SAY_BYE_TO_BG,
+}
+```
+
+Now whenever we need to talk to Background script from Content Script or Popup, we can write `Messenger.sendMessageToBackground(BackgroundMessages.SAY_HELLO_TO_BG, {message: "Hey Background"})`.
+
+Sending message to Content Script from Background is also similar with a difference that we need to pass the tab ID of the content script. That is the first parameter you see in `Messenger.sendMessageToContentScript(tabID, ContentScriptMessages.SAY_HELLO_TO_CS, {message: "Hey Content Script!"})` function.
+
+## Registering Message listeners
+
+We will register the message listeners that we talked about in Step 2 and 3. This code is similar for both Content Script and Background. We will register `ContentScriptMessages` in content script initialization and `BackgroundMessages` in background initialization.
+
+```typescript
+// content-script.ts
+// Install webextension-polyfill for JavaScript based projects
+import { browser } from "webextension-polyfill-ts";
+import { BackgroundMessages, ContentScriptMessages } from "./messages";
+import Messenger from "./Messenger";
+
+class ContentScript {
+  requests = new Map();
+
+  async receiveHello(sender, data) {
+    console.log(`receiveHelloFromBackground: `, data);
+  }
+
+  async receiveBye(sender, data) {
+    console.log(`receiveByeFromBackground: `, data);
+  }
+
+  async sayHelloToBackground() {
+    const response = await Messenger.sendMessageToBackground(
+      BackgroundMessages.SAY_HELLO_TO_BG,
+      { message: "Hello Background!!!" }
+    );
+    console.log("Background Response: ", response);
+  }
+
+  async sayByeToBackground() {
+    await Messenger.sendMessageToBackground(BackgroundMessages.SAY_BYE_TO_BG, {
+      message: "Bye Background!!!",
+    });
+  }
+
+  registerMessengerRequests() {
+    this.requests.set(ContentScriptMessages.SAY_HELLO_TO_CS, this.receiveHello);
+    this.requests.set(ContentScriptMessages.SAY_BYE_TO_CS, this.receiveBye);
+  }
+
+  listenForMessages() {
+    browser.runtime.onMessage.addListener((message, sender) => {
+      const { type, data } = message;
+      return this.requests.get(type)(sender, data);
+    });
+  }
+
+  init() {
+    // 1. Create a mapping for message listeners
+    this.registerMessengerRequests();
+
+    // 2. Listen for messages from background and run the listener from the map
+    this.listenForMessages();
+  }
+}
+
+new ContentScript().init();
+```
+
+```typescript
+//background.ts
+import { browser, Runtime } from "webextension-polyfill-ts";
+import { BackgroundMessages, ContentScriptMessages } from "./messages";
+import Messenger from "./Messenger";
+import { IMessage, MessageListener } from "./types";
+
+class Background {
+  requests = new Map<BackgroundMessages, MessageListener>();
+
+  async receiveHello(sender: Runtime.MessageSender, data: IMessage<any>) {
+    console.log("receiveHelloFromContentScript: ", data);
+    return {
+      message: "Hey there!!!",
+    };
+  }
+
+  async receiveBye(sender: Runtime.MessageSender, data: IMessage<any>) {
+    console.log("receiveByeFromContentScript: ", data);
+    return {
+      message: "Bye there!!!",
+    };
+  }
+
+  async sayHelloToContentScript(tabID: number) {
+    await Messenger.sendMessageToContentScript(
+      tabID,
+      ContentScriptMessages.SAY_HELLO_TO_CS,
+      { message: "Hello from BG!!!" }
+    );
+  }
+
+  async sayByeToContentScript(tabID: number) {
+    await Messenger.sendMessageToContentScript(
+      tabID,
+      ContentScriptMessages.SAY_BYE_TO_CS,
+      { message: "Bye from BG!!!" }
+    );
+  }
+
+  registerMessengerRequests() {
+    this.requests.set(BackgroundMessages.SAY_HELLO_TO_BG, this.receiveHello);
+
+    this.requests.set(BackgroundMessages.SAY_BYE_TO_BG, this.receiveBye);
+  }
+
+  listenForMessages() {
+    browser.runtime.onMessage.addListener((message, sender) => {
+      const { type, data } = message;
+      return this.requests.get(type)(sender, data);
+    });
+  }
+  // Example: Send message to content script of active tab after 1000 ms
+  sendHelloToActiveTab() {
+    browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
+      tabs.forEach((tab) => {
+        this.sayHelloToContentScript(tab.id);
+      });
+    });
+  }
+
+  init() {
+    // 1. Create a mapping for message listeners
+    this.registerMessengerRequests();
+
+    // 2. Listen for messages from background and run the listener from the map
+    this.listenForMessages();
+  }
+}
+
+new Background().init();
+```
+
+We can use the `messages.ts` and `Messenger.ts` from popup as well. Since popup won't be open all the time, we don't have to add message listeners there. I prefer to use the `Messenger.sendMessageToBackground` and use the return value in the popup.
+
+## Conclusion
+
+We've abstracted most of the messaging to `messages.ts` and `Messenger.ts`. Whenever you want to add new types of messages, update the `enum` (or add a key if you used objects) in `messages.ts` and add a listener in the content script or background in their `registerMessengerRequests` function.
+
+This code works in Firefox and all chromium-based browsers. Simply send a message and `await` for the response if the other side returns something from the listener. Thanks to Mozilla's [webextension-polyfill](https://github.com/mozilla/webextension-polyfill) we get cross-browser support and don't have to deal with the callback version of Chrome's API.
+
+There are other ways people are trying to solve this like [webext-redux](https://github.com/tshaddix/webext-redux) which is a clever way for message passing along with managing state between different parts of the extension the `redux` way. But I feel it adds additional verbose API in an attempt to solve existing complexity and only works with React. Feel free to check that repository if that suits your requirements.
+
+You can install the sample extension I built for this blog post [here](https://github.com/saisandeepvaddi/web-extension-communication-blog-post).
+
+Have a great day !!! 👋
