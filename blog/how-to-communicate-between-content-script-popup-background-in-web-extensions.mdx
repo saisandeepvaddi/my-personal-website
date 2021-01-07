@@ -188,7 +188,6 @@ class Background {
 
   registerMessengerRequests() {
     this.requests.set(BackgroundMessages.SAY_HELLO_TO_BG, this.receiveHello);
-
     this.requests.set(BackgroundMessages.SAY_BYE_TO_BG, this.receiveBye);
   }
 
@@ -198,7 +197,7 @@ class Background {
       return this.requests.get(type)(sender, data);
     });
   }
-  // Example: Send message to content script of active tab after 1000 ms
+  // Example: Send message to content script of active tab
   sendHelloToActiveTab() {
     browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
       tabs.forEach((tab) => {
