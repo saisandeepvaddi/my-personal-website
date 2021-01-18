@@ -21,19 +21,20 @@ const getTagColors = (tag) => {
     }
 
     default:
-      return "bg-gray text-white";
+      return "bg-purple text-white";
   }
 };
 
 function Tag({ tag, onClick }) {
   return (
-    <span
-      className={`text-white ${getTagColors(tag)} p-1 text-sm cursor-pointer`}
-      aria-role="button"
+    <button
+      className={`text-white ${getTagColors(
+        tag
+      )} px-2 py-1 text-sm cursor-pointer outline-purple`}
       onClick={() => onClick(tag)}
     >
       {tag}
-    </span>
+    </button>
   );
 }
 

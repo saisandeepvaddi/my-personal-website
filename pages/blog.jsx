@@ -11,7 +11,7 @@ import Tag from "../components/Tag/Tag";
 import SEO from "../components/SEO/SEO";
 
 function Blog({ posts }) {
-  const [filteredPosts, setFilteredPosts] = React.useState(posts);
+  const [filteredPosts, setFilteredPosts] = React.useState(posts ?? []);
   const [isFiltered, setIsFiltered] = React.useState(false);
 
   const handleTagClick = (tag) => {
@@ -79,7 +79,10 @@ export async function getStaticProps() {
     return { matter: data, slug };
   });
 
-  posts.sort((a, b) => new Date(b.matter.date) - new Date(a.matter.date));
+  posts.sort(
+    (a, b) =>
+      new Date(b.matter.date).getTime() - new Date(a.matter.date).getTime()
+  );
 
   return {
     props: {
