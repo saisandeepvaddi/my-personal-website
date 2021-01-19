@@ -29,11 +29,13 @@ If not, here's a way to start.
 ```json
   // settings.json
 
-  "editor.codeActionsOnSave": {
-    "source.fixAll": true 
-  },
+  "javascript.format.enable": false,
+  "typescript.format.enable": false,
   "eslint.format.enable": true,
   "eslint.lintTask.enable": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
   "eslint.workingDirectories": [
     {
       "mode": "auto"
@@ -47,7 +49,10 @@ If not, here's a way to start.
 While the above steps are sufficient for linting opened files, we need a way to run ESLint run on the whole workspace folder and be able to navigate to the file and exact line where the issue is.
 
 <p align="center">
-  <img src="https://res.cloudinary.com/saisandeepvaddi/image/upload/v1610914052/blog/setup-and-configure-eslint-in-vscode/problems_panel.png" alt="VSCode problems panel" />
+  <img
+    src="https://res.cloudinary.com/saisandeepvaddi/image/upload/v1610914052/blog/setup-and-configure-eslint-in-vscode/problems_panel.png"
+    alt="VSCode problems panel"
+  />
 </p>
 
 That is where VSCode tasks come in. [VSCode tasks](https://code.visualstudio.com/docs/editor/tasks) help in automating stuff like linting, building by running custom tools and commands.
@@ -55,7 +60,10 @@ That is where VSCode tasks come in. [VSCode tasks](https://code.visualstudio.com
 Run `ctrl+shift+p` or `cmd+shift+p` and search for `Tasks: Configure Task`.
 
 <p align="center">
-  <img src="https://res.cloudinary.com/saisandeepvaddi/image/upload/v1610918463/blog/setup-and-configure-eslint-in-vscode/configure_tasks_dropdown.png" alt="Configure task panel" />
+  <img
+    src="https://res.cloudinary.com/saisandeepvaddi/image/upload/v1610918463/blog/setup-and-configure-eslint-in-vscode/configure_tasks_dropdown.png"
+    alt="Configure task panel"
+  />
 </p>
 
 There might already be a default eslint task defined. You can edit the predefined task or add an extra task in the tasks array in the opened `tasks.json` file.
@@ -115,23 +123,35 @@ Now we have `ESLint` and `ESLint:fix` tasks available to run on the project.
 Run `ctrl+shift+p` or `cmd+shift+p` and search for `Tasks: Run Task`.
 
 <p align="center">
-  <img src="https://res.cloudinary.com/saisandeepvaddi/image/upload/v1610919113/blog/setup-and-configure-eslint-in-vscode/run_task.png" alt="Run task dropdown" />
+  <img
+    src="https://res.cloudinary.com/saisandeepvaddi/image/upload/v1610919113/blog/setup-and-configure-eslint-in-vscode/run_task.png"
+    alt="Run task dropdown"
+  />
 </p>
 
 Choose `ESLint` task to run.
 
 <p align="center">
-  <img src="https://res.cloudinary.com/saisandeepvaddi/image/upload/v1610919113/blog/setup-and-configure-eslint-in-vscode/select_tasks_to_run.png" alt="Select task to run" />
+  <img
+    src="https://res.cloudinary.com/saisandeepvaddi/image/upload/v1610919113/blog/setup-and-configure-eslint-in-vscode/select_tasks_to_run.png"
+    alt="Select task to run"
+  />
 </p>
 
 That's it. You can now click and open the problems panel from the bottom left of the VSCode screen.
 
 <p align="center">
-  <img src="https://res.cloudinary.com/saisandeepvaddi/image/upload/v1610919346/blog/setup-and-configure-eslint-in-vscode/problem_status_bar.png" alt="Status bar problems button" />
+  <img
+    src="https://res.cloudinary.com/saisandeepvaddi/image/upload/v1610919346/blog/setup-and-configure-eslint-in-vscode/problem_status_bar.png"
+    alt="Status bar problems button"
+  />
 </p>
 
 <p align="center">
-  <img src="https://res.cloudinary.com/saisandeepvaddi/image/upload/v1610919439/blog/setup-and-configure-eslint-in-vscode/problems_panel_2.png" alt="VSCode problems panel" />
+  <img
+    src="https://res.cloudinary.com/saisandeepvaddi/image/upload/v1610919439/blog/setup-and-configure-eslint-in-vscode/problems_panel_2.png"
+    alt="VSCode problems panel"
+  />
 </p>
 
 Hope it helped 🙂. Have a nice day 👋.
