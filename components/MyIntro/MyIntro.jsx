@@ -22,11 +22,11 @@ function MyIntro() {
           <p className="pb-3 leading-relaxed">
             I work at{" "}
             <a
-              href="https://gkaccess.com"
+              href="https://motional.com"
               target="blank"
               rel="noreferrer noopener"
             >
-              Untethered Labs
+              Motional
             </a>{" "}
             as a <em>Front-End Developer</em>.
           </p>

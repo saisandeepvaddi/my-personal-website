@@ -14,22 +14,20 @@ function AboutMe() {
         <p>
           I&apos;m a Software Developer at{" "}
           <a
-            href="https://gkaccess.com"
+            href="https://motional.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Untethered Labs, Inc.
+            Motional
           </a>
-          , a tech company creating proximity-based computer & website access
-          managment technologies under GateKeeper product suite. My primary
-          focus at work is building web-based tools mostly using JavaScript
-          technologies. I work on building UIs and APIs for end-to-end admin
-          dashboard systems, browser extensions.
+          , a tech company making driverless vehicles a safe, reliable, and
+          accessible reality.
         </p>
         <p>
-          My primary tech-stack includes JavaScript, TypeScript, ReactJS,
-          NodeJS, MongoDB, and various other tools that make the job easier to
-          build user-loving software.
+          My primary focus is building web-based User Interfaces. My primary
+          tech-stack includes JavaScript, TypeScript, ReactJS, NodeJS, MongoDB,
+          and various other tools that make the job easier to build user-loving
+          software.
         </p>
         <p>
           I open source any software I build which I believe useful to others.
