@@ -19,6 +19,9 @@ const getTagColors = (tag) => {
     case "nodejs": {
       return "bg-nodejs";
     }
+    case "tip": {
+      return "bg-red-500";
+    }
 
     default:
       return "bg-purple text-white";

@@ -1,0 +1,34 @@
+---
+tags: [Tip]
+title: Open package docs and git repository links with npm
+description: Did you know you can open any package repository and documentation right from the command-line?
+date: "01/30/2021"
+---
+
+When we need to quickly see the documentation for an npm package, we generally either go to the package website or use a search engine right?
+
+There is a quicker way to directly go to the package docs or git repository right from `npm` CLI.
+
+## To open the package documentation
+
+```shell
+  npm docs [package-name]
+```
+
+This essentially opens the `Homepage` link you see on the npm website. `npm docs react` will open [reactjs.org](https://reactjs.org).
+
+## To open the package Git repository
+
+```shell
+  npm repo [package-name]
+```
+
+This opens the `Repository` link you see on the npm website. `npm repo react` will open [https://github.com/facebook/react](https://github.com/facebook/react).
+
+## What about Yarn?
+
+I'm not aware of an exactly similar feature in Yarn. But `yarn info <package> [<field>]` comes close. It will display the information about the `package` right in your terminal instead of opening links.
+
+`yarn info next` will display the information about `next` package. You can also see specific information about a field like `yarn info next description` or `yarn info next readme`.
+
+Although, I found it inconsistent. For me `yarn info react readme` shows `undefined`. Check the [yarn info docs](https://classic.yarnpkg.com/en/docs/cli/info) for more.
