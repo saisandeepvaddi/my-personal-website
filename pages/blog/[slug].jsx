@@ -57,7 +57,7 @@ export async function getStaticProps({ params }) {
       ],
       rehypePlugins: [
         require("mdx-prism"),
-        require("rehype-autolink-headings"),
+        [require("rehype-autolink-headings"), { behavior: "append" }],
       ],
     },
     scope: frontMatter,
