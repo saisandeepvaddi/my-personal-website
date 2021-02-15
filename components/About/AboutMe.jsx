@@ -25,12 +25,12 @@ function AboutMe() {
         </p>
         <p>
           My primary focus is building web-based User Interfaces. My primary
-          tech-stack includes JavaScript, TypeScript, ReactJS, NodeJS, MongoDB,
-          and various other tools that make the job easier to build user-loving
-          software.
+          tech-stack includes JavaScript, TypeScript, ReactJS, NodeJS. But I
+          love to learn and use any technology that makes the job easier to
+          build user-loving software.
         </p>
         <p>
-          I open source any software I build which I believe useful to others.
+          I open-source any software I build which I believe useful to others.
           You can find my code at{" "}
           <a
             href="https://github.com/saisandeepvaddi"
@@ -48,9 +48,9 @@ function AboutMe() {
           >
             Ten Hands
           </a>
-          . If you are interested in contributing to open-source, open an issue
-          or PR on any of my github projects. We&apos;ll have fun building cool
-          things.
+          . If you are interested in contributing to open-source - not only code
+          but anything, open an issue or PR on any of my GitHub projects.
+          We&apos;ll have fun building cool things.
         </p>
         <p>
           Feel free to get in touch with me by{" "}

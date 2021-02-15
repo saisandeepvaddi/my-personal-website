@@ -43,18 +43,18 @@ function Blog({ posts }) {
           </button>
         </div>
       )}
-      <ul className="space-y-4 prose max-w-3xl">
+      <ul className="space-y-4 prose max-w-3xl article-list">
         {filteredPosts.map(({ matter, slug }, i) => (
-          <li key={matter.title ?? i}>
+          <li key={matter.title ?? i} className="article-list-item">
             <Link href={`/blog/${slug}`}>
               <a className="text-xl font-bold styled-link">{matter.title}</a>
             </Link>
             <div>
               <span className="text-sm italic">{formatDate(matter.date)}</span>
             </div>
-            <p>{matter.description}</p>
+            <p className="article-description">{matter.description}</p>
             <div>
-              <ul className="space-x-1 list-none">
+              <ul className="space-x-1 list-none tag-list">
                 {matter?.tags?.map((tag, i) => (
                   <li key={i} className="inline-block">
                     <Tag tag={tag} onClick={handleTagClick} />

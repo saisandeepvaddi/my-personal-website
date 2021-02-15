@@ -17,10 +17,7 @@ function MyIntro() {
         <div className="text-center md:text-left">
           <h1 className="font-semibold my-2 text-4xl">Sai Sandeep Vaddi</h1>
           <p className="pb-3 mt-4 leading-relaxed">
-            I&apos;m a Software Developer.
-          </p>
-          <p className="pb-3 leading-relaxed">
-            I work at{" "}
+            I&apos;m a Software Developer at{" "}
             <a
               href="https://motional.com"
               target="blank"
@@ -28,7 +25,7 @@ function MyIntro() {
             >
               Motional
             </a>{" "}
-            as a <em>Front-End Developer</em>.
+            working on building UIs.
           </p>
         </div>
       </section>

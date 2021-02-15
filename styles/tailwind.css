@@ -50,3 +50,24 @@
     visibility: visible;
   }
 }
+
+/* Overriding some of the tailwind-typography plugin styles.
+  Using TW classes in the JS code are getting overriden by the plugin.
+*/
+.article-list p.article-description {
+  margin-bottom: 0.1em;
+}
+
+.article-list.prose ul.tag-list {
+  margin-top: 0;
+  padding-bottom: 1.25em;
+}
+
+.article-list.prose ul.tag-list > li {
+  padding-left: 0;
+  padding-right: 1em;
+}
+
+.article-list.prose ul.tag-list > li::before {
+  all: unset;
+}
