@@ -92,8 +92,6 @@ This always results in an unsigned integer between 0 (all 0 bits) and 0xFFFFFFFF
 
 No, it's not. This is JavaScript we're talking about.
 
-_When life gives lemons, JavaScript tries to make orange juice out of it._
-
 ```js
 -1 >>> 0; // 4294967295  Ok, I get it
 
@@ -109,7 +107,7 @@ null >> 0; // 0     🤷‍♂️
 null >>> 0; // 0     🤷‍♂️
 ```
 
-That's JavaScript coercion gods working their magic.
+That's JavaScript coercion working its magic.
 
 When `>>>` failed coercing "lemons" to a number, it resulted in 0 to ensure an integer result.
 
@@ -125,7 +123,7 @@ numbers.splice(numbers.indexOf(6), 1);
 
 Whenever you use `splice` with `indexOf()` in JS, always check if index is > 0. Otherwise if element is not found, `.splice(-1, 1)` removes the last element.
 
-The '_420 byte alternative to a popular library_' way to write this is,
+The totally not recommended shortcut way to write this is,
 
 ```tsx
 numbers.splice(numbers.indexOf(element) >>> 0, 1);
@@ -133,7 +131,6 @@ numbers.splice(numbers.indexOf(element) >>> 0, 1);
 
 If `indexOf(element)` is -1, We know `-1 >>> 0` will be `4294967295`. So splice wouldn't remove anything wrong.
 
-Seriously, don't write code like that. Unless you are trying to save the world with 50 fewer bytes of course!
 
 ## What does <<< do then?
 
